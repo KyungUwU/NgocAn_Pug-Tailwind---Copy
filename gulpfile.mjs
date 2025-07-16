@@ -4,11 +4,9 @@ import gulp from 'gulp';
 import pug from 'gulp-pug';
 import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
-import clean from 'gulp-clean';
+// import clean from 'gulp-clean';
 import browserSyncModule from 'browser-sync';
 import newer from 'gulp-newer';
-import imagemin from 'gulp-imagemin';
-
 
 // Create browserSync instance
 const browserSync = browserSyncModule.create();
@@ -26,10 +24,6 @@ const paths = {
     dest: 'public/' // Changed from public/dist/ to public/
   },
   assets: {
-    images: {
-      src: 'src/assets/images/**/*',
-      dest: 'public/assets/images/'
-    },
     fonts: {
       src: 'src/assets/fonts/**/*',
       dest: 'public/assets/fonts/'
@@ -47,11 +41,11 @@ const paths = {
   }
 };
 
-// Clean public folder
-export function cleanAll() {
-  return gulp.src('public/*', { read: false, allowEmpty: true })
-    .pipe(clean());
-}
+// // Clean public folder
+// export function cleanAll() {
+//   return gulp.src('public/*', { read: false, allowEmpty: true })
+//     .pipe(clean());
+// }
 
 // Compile Pug templates
 export function views() {
@@ -89,32 +83,6 @@ export function stylesProd() {
     .pipe(gulp.dest(paths.styles.dest));
 }
 
-// Copy images (without optimization to avoid errors)
-export function images() {
-  return gulp.src(paths.assets.images.src)
-    .pipe(newer(paths.assets.images.dest))
-    .pipe(gulp.dest(paths.assets.images.dest))
-    .pipe(browserSync.stream());
-}
-
-// Optional: Image optimization task (run separately if needed)
-export function optimizeImages() {
-  return gulp.src(paths.assets.images.src)
-    .pipe(imagemin([
-      imagemin.gifsicle({interlaced: true}),
-      imagemin.mozjpeg({quality: 85, progressive: true}),
-      imagemin.optipng({optimizationLevel: 5}),
-      imagemin.svgo({
-        plugins: [
-          {removeViewBox: false},
-          {cleanupIDs: false}
-        ]
-      })
-    ], {
-      silent: true
-    }))
-    .pipe(gulp.dest(paths.assets.images.dest));
-}
 
 // Copy fonts
 export function fonts() {
@@ -147,21 +115,18 @@ export function serve() {
   // Watch files for changes
   gulp.watch(paths.pug.watch, views); // Watch all pug files
   gulp.watch(paths.styles.watch, stylesDev); // Watch all CSS files
-  gulp.watch(paths.assets.images.src, images);
   gulp.watch(paths.assets.fonts.src, fonts);
   gulp.watch(paths.assets.js.src, js);
 }
 
 // Development build
 export const dev = gulp.series(
-  cleanAll,
-  gulp.parallel(views, stylesDev, images, fonts, js)
+  gulp.parallel(views, stylesDev, fonts, js)
 );
 
 // Production build
 export const build = gulp.series(
-  cleanAll,
-  gulp.parallel(views, stylesProd, images, fonts, js)
+  gulp.parallel(views, stylesProd, fonts, js)
 );
 
 // Default task: development build and serve

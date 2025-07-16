@@ -1,14 +1,13 @@
-//- components/sections/funFacts.pug
-
 .section.bg-white.py-12
   .container.mx-auto
     .grid(class="md:grid-cols-3 gap-8 text-center")
       each fact in funFacts
-        .relative.bg-orange-50.p-6.rounded-lg
-          // Orange dot
-          .absolute.-top-3.left-1/2.transform.-translate-x-1/2
+        .relative(class="bg-orange-50 p-6 rounded-lg")
+          .absolute(
+            class="top-0 right-0 transform translate-x-1/2 -translate-y-1/2"
+          )
             .w-6.h-6.bg-orange-500.rounded-full
-          // Number
-          h2.text-4xl.font-bold.text-orange-500 #{fact.num}
-          // Label
-          p.mt-2.text-gray-700 #{fact.label}
+          // Số
+          h2.text-4xl.font-bold.text-orange-500= fact.num
+          // Nhãn
+          p.mt-2.text-gray-700= fact.label
