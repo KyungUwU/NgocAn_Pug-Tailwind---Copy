@@ -16,25 +16,25 @@
       country: 'Canada', 
       title: 'Hurry!', 
       subtitle: 'Get the Best Villa for you', 
-      image: 'src/assets/images/banner-01.jpg' 
+      image: 'assets/images/banner-01.jpg' 
     },
     { 
       city: 'Melbourne', 
       country: 'Australia', 
       title: 'Be Quick!', 
       subtitle: 'Get the best villa in town', 
-      image: 'src/assets/images/banner-02.jpg' 
+      image: 'assets/images/banner-02.jpg' 
     },
     { 
       city: 'Miami', 
       country: 'South Florida', 
       title: 'Act Now!', 
       subtitle: 'Get the highest level penthouse', 
-      image: 'src/assets/images/banner-03.jpg' 
+      image: 'assets/images/banner-03.jpg' 
     }
   ];
 
-    // Accordion FAQs
+  // Accordion FAQs
   const accordionItems = [
     { 
       q: 'Best useful links?', 
@@ -50,28 +50,28 @@
     }
   ];
 
-    // Info Items
+  // Info Items
   const infoItems = [
-    { icon: 'info-icon-01.png', title: '250 m2', desc: 'Total Flat Space' },
-    { icon: 'info-icon-02.png', title: 'Contract', desc: 'Contract Ready' },
-    { icon: 'info-icon-03.png', title: 'Payment', desc: 'Payment Process' },
-    { icon: 'info-icon-04.png', title: 'Safety', desc: '24/7 Under Control' }
+    { icon: 'assets/images/info-icon-01.png', title: '250 m2', desc: 'Total Flat Space' },
+    { icon: 'assets/images/info-icon-02.png', title: 'Contract', desc: 'Contract Ready' },
+    { icon: 'assets/images/info-icon-03.png', title: 'Payment', desc: 'Payment Process' },
+    { icon: 'assets/images/info-icon-04.png', title: 'Safety', desc: '24/7 Under Control' }
   ];
 
-    // Fun Facts
+  // Fun Facts
   const funFacts = [
     { num: '34', label: 'Buildings Finished Now' },
     { num: '12', label: 'Years Experience' },
     { num: '24', label: 'Awards Won 2023' }
   ];
 
-    // Best Deal Tabs
+  // Best Deal Tabs
   const bestDealTabs = ['Apartment', 'Villa House', 'Penthouse'];
 
-    // Properties
+  // Properties
   const properties = [
     { 
-      img: 'property-01.jpg', 
+      img: 'assets/images/property-01.jpg', 
       title: 'Luxury Villa', 
       price: '$2,264,000', 
       addr: '18 New Street Miami, OR 97219', 
@@ -79,7 +79,7 @@
       baths: '8' 
     },
     { 
-      img: 'property-02.jpg', 
+      img: 'assets/images/property-02.jpg', 
       title: 'Luxury Villa', 
       price: '$1,180,000', 
       addr: '54 Mid Street Florida, OR 27001', 
@@ -87,11 +87,129 @@
       baths: '5' 
     },
     { 
-      img: 'property-03.jpg', 
+      img: 'assets/images/property-03.jpg', 
       title: 'Luxury Villa', 
       price: '$1,460,000', 
       addr: '26 Old Street Miami, OR 38540', 
       beds: '5', 
       baths: '4' 
+    },
+    { 
+      img: 'assets/images/property-04.jpg', 
+      title: 'Luxury Villa', 
+      price: '$3,145,000', 
+      addr: '12 New Street Miami, OR 12650', 
+      beds: '8', 
+      baths: '8' 
+    },
+    { 
+      img: 'assets/images/property-05.jpg', 
+      title: 'Luxury Villa', 
+      price: '$2,900,000', 
+      addr: '34 Beach Street Miami, OR 42680', 
+      beds: '8', 
+      baths: '8' 
+    },
+    { 
+      img: 'assets/images/property-06.jpg', 
+      title: 'Luxury Villa', 
+      price: '$4,600,000', 
+      addr: '22 New Street Portland, OR 16540', 
+      beds: '8', 
+      baths: '8' 
     }
   ];
+
+  // Featured Property
+  const featuredProperty = {
+    image: 'assets/images/featured.jpg',
+    title: 'Best Apartment & Sea View',
+    description: 'Get the best villa website template in HTML CSS and Bootstrap for your business. TemplateMo provides you the best free CSS templates in the world. Please tell your friends about it.'
+  };
+
+  // Best Deal Data
+  const bestDealData = {
+    apartment: {
+      image: 'assets/images/deal-01.jpg',
+      title: 'Extra Info About Property',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor pack incididunt ut labore et dolore magna aliqua quised ipsum suspendisse.',
+      details: [
+        { label: 'Total Flat Space', value: '185 m2' },
+        { label: 'Floor number', value: '26th' },
+        { label: 'Number of rooms', value: '4' },
+        { label: 'Parking Available', value: 'Yes' },
+        { label: 'Payment Process', value: 'Bank' }
+      ]
+    },
+    villa: {
+      image: 'assets/images/deal-02.jpg',
+      title: 'Detail Info About Villa',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor pack incididunt ut labore et dolore magna aliqua quised ipsum suspendisse.',
+      details: [
+        { label: 'Total Flat Space', value: '250 m2' },
+        { label: 'Floor number', value: '26th' },
+        { label: 'Number of rooms', value: '5' },
+        { label: 'Parking Available', value: 'Yes' },
+        { label: 'Payment Process', value: 'Bank' }
+      ]
+    },
+    penthouse: {
+      image: 'assets/images/deal-03.jpg',
+      title: 'Extra Info About Penthouse',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor pack incididunt ut labore et dolore magna aliqua quised ipsum suspendisse.',
+      details: [
+        { label: 'Total Flat Space', value: '320 m2' },
+        { label: 'Floor number', value: '34th' },
+        { label: 'Number of rooms', value: '6' },
+        { label: 'Parking Available', value: 'Yes' },
+        { label: 'Payment Process', value: 'Bank' }
+      ]
+    }
+  };
+
+  // Contact Info
+  const contactInfo = {
+    phone: '+1 234 567 8900',
+    email: 'info@villa.co',
+    address: 'Sunny Isles Beach, FL 33160'
+  };
+
+  // Team Members
+  const teamMembers = [
+    {
+      name: 'John Doe',
+      role: 'Real Estate Agent',
+      image: 'assets/images/team-01.jpg',
+      social: {
+        facebook: '#',
+        twitter: '#',
+        linkedin: '#'
+      }
+    },
+    {
+      name: 'Jane Smith',
+      role: 'Property Manager',
+      image: 'assets/images/team-02.jpg',
+      social: {
+        facebook: '#',
+        twitter: '#',
+        linkedin: '#'
+      }
+    },
+    {
+      name: 'Mike Johnson',
+      role: 'Sales Manager',
+      image: 'assets/images/team-03.jpg',
+      social: {
+        facebook: '#',
+        twitter: '#',
+        linkedin: '#'
+      }
+    }
+  ];
+
+  // Logo
+  const logo = {
+    image: 'assets/images/logo.png',
+    alt: 'Villa Agency Logo'
+  };

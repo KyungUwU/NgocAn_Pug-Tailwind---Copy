@@ -1,111 +1,171 @@
 // gulpfile.mjs
+
 import gulp from 'gulp';
 import pug from 'gulp-pug';
 import postcss from 'gulp-postcss';
-import tailwindcss from 'tailwindcss';
-import autoprefixer from 'autoprefixer';
 import sourcemaps from 'gulp-sourcemaps';
 import clean from 'gulp-clean';
 import browserSyncModule from 'browser-sync';
 import newer from 'gulp-newer';
 import imagemin from 'gulp-imagemin';
-import cache from 'gulp-cache';
 
-const { src, dest, series, parallel, watch } = gulp;
+
+// Create browserSync instance
 const browserSync = browserSyncModule.create();
 
+// Paths configuration
 const paths = {
-  views: {
-    src: ['src/views/**/*.pug', 'src/components/**/*.pug', 'src/includes/**/*.pug'],
+  pug: {
+    src: 'src/views/*.pug',
+    watch: 'src/**/*.pug', // Watch all pug files including components, includes, layouts
     dest: 'public/'
   },
   styles: {
-    src:  'src/styles/tailwind.css',
-    dest: 'public/dist/'
+    src: 'src/styles/tailwind.css',
+    watch: 'src/styles/**/*.css',
+    dest: 'public/' // Changed from public/dist/ to public/
   },
-  scripts: {
-    src:  'src/assets/js/**/*.js',
-    dest: 'public/assets/js/'
+  assets: {
+    images: {
+      src: 'src/assets/images/**/*',
+      dest: 'public/assets/images/'
+    },
+    fonts: {
+      src: 'src/assets/fonts/**/*',
+      dest: 'public/assets/fonts/'
+    },
+    js: {
+      src: 'src/assets/js/**/*.js',
+      dest: 'public/assets/js/'
+    }
   },
-  images: {
-    src:  'src/assets/images/**/*',
-    dest: 'public/assets/images/'
+  components: {
+    watch: 'src/components/**/*.pug'
   },
-  fonts: {
-    src:  'src/assets/fonts/**/*',
-    dest: 'public/assets/fonts/'
+  includes: {
+    watch: 'src/includes/**/*.pug'
   }
 };
 
-// Xoá sạch public trước build
+// Clean public folder
 export function cleanAll() {
-  return src('public/*', { read: false, allowEmpty: true })
+  return gulp.src('public/*', { read: false, allowEmpty: true })
     .pipe(clean());
 }
 
-// Pug → HTML
+// Compile Pug templates
 export function views() {
-  return src(paths.views.src, { base: 'src' })
-    .pipe(pug({ pretty: true, basedir: 'src' }))
-    .pipe(dest(paths.views.dest))
+  return gulp.src(paths.pug.src)
+    .pipe(pug({ 
+      pretty: true,
+      basedir: 'src' // Allow absolute imports from src folder
+    }))
+    .on('error', function(err) {
+      console.error('Pug compilation error:', err.message);
+      this.emit('end');
+    })
+    .pipe(gulp.dest(paths.pug.dest))
     .pipe(browserSync.stream());
 }
 
-// Tailwind via PostCSS + sourcemaps + autoprefixer
-export function styles() {
-  return src(paths.styles.src)
+// Compile Tailwind CSS for development
+export function stylesDev() {
+  return gulp.src(paths.styles.src)
     .pipe(sourcemaps.init())
-    .pipe(postcss([ tailwindcss(), autoprefixer() ]))
+    .pipe(postcss()) // Không truyền plugins, sẽ đọc từ postcss.config.js
     .pipe(sourcemaps.write('.'))
-    .pipe(dest(paths.styles.dest))
+    .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream());
 }
 
-// Copy JS
-export function scripts() {
-  return src(paths.scripts.src)
-    .pipe(newer(paths.scripts.dest))
-    .pipe(dest(paths.scripts.dest))
-    .pipe(browserSync.stream());
+// Compile Tailwind CSS for production
+export function stylesProd() {
+  return gulp.src(paths.styles.src)
+    .pipe(postcss()) // Không truyền plugins, sẽ đọc từ postcss.config.js
+    .on('error', function(err) {
+      console.error('PostCSS error:', err.message);
+      this.emit('end');
+    })
+    .pipe(gulp.dest(paths.styles.dest));
 }
 
-// Copy & optimize images
+// Copy images (without optimization to avoid errors)
 export function images() {
-  return src(paths.images.src)
-    .pipe(newer(paths.images.dest))
-    .pipe(cache(imagemin({ interlaced: true })))
-    .pipe(dest(paths.images.dest))
+  return gulp.src(paths.assets.images.src)
+    .pipe(newer(paths.assets.images.dest))
+    .pipe(gulp.dest(paths.assets.images.dest))
     .pipe(browserSync.stream());
+}
+
+// Optional: Image optimization task (run separately if needed)
+export function optimizeImages() {
+  return gulp.src(paths.assets.images.src)
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.mozjpeg({quality: 85, progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({
+        plugins: [
+          {removeViewBox: false},
+          {cleanupIDs: false}
+        ]
+      })
+    ], {
+      silent: true
+    }))
+    .pipe(gulp.dest(paths.assets.images.dest));
 }
 
 // Copy fonts
 export function fonts() {
-  return src(paths.fonts.src)
-    .pipe(newer(paths.fonts.dest))
-    .pipe(dest(paths.fonts.dest))
+  return gulp.src(paths.assets.fonts.src)
+    .pipe(newer(paths.assets.fonts.dest))
+    .pipe(gulp.dest(paths.assets.fonts.dest))
     .pipe(browserSync.stream());
 }
 
-// Server + watch
-export function serve() {
-  browserSync.init({
-    server: { baseDir: 'public' },
-    port: 3000,
-    open: true
-  });
-
-  watch(paths.views.src, views);
-  watch('src/styles/**/*.css', styles);
-  watch(paths.scripts.src, scripts);
-  watch(paths.images.src, images);
-  watch(paths.fonts.src, fonts);
+// Copy JavaScript files
+export function js() {
+  return gulp.src(paths.assets.js.src)
+    .pipe(newer(paths.assets.js.dest))
+    .pipe(gulp.dest(paths.assets.js.dest))
+    .pipe(browserSync.stream());
 }
 
-// Build và default
-export const build = series(
+// Development server with file watching
+export function serve() {
+  // Initialize BrowserSync
+  browserSync.init({
+    server: {
+      baseDir: 'public'
+    },
+    port: 3000,
+    open: true,
+    notify: false
+  });
+
+  // Watch files for changes
+  gulp.watch(paths.pug.watch, views); // Watch all pug files
+  gulp.watch(paths.styles.watch, stylesDev); // Watch all CSS files
+  gulp.watch(paths.assets.images.src, images);
+  gulp.watch(paths.assets.fonts.src, fonts);
+  gulp.watch(paths.assets.js.src, js);
+}
+
+// Development build
+export const dev = gulp.series(
   cleanAll,
-  parallel(views, styles, scripts, images, fonts)
+  gulp.parallel(views, stylesDev, images, fonts, js)
 );
 
-export default series(build, serve);
+// Production build
+export const build = gulp.series(
+  cleanAll,
+  gulp.parallel(views, stylesProd, images, fonts, js)
+);
+
+// Default task: development build and serve
+export default gulp.series(dev, serve);
+
+// Export serve as watch for backward compatibility
 export { serve as watch };
