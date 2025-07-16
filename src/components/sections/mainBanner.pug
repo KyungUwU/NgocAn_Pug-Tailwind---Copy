@@ -1,0 +1,26 @@
+.relative
+.swiper.relative
+  .swiper-wrapper
+    each slide in slides
+      .swiper-slide(
+        style=`background-image: url('${slide.image}')`
+        class="bg-cover bg-center relative text-black font-sans"
+      )
+        .relative.z-10.flex.items-center.justify-start.w-full.h-full
+          div(class="pt-[-300px] pb-[320px] w-full pl-[200px]")
+            div(class="px-[293px] h-[600px] pt-[-300px] pb-[320px] w-full pl-[200px]")
+              div(class="flex flex-col items-start")
+                span.category(
+                  class="bg-white text-[#1e1e1e] text-base font-medium capitalize py-[6px] px-[15px] mb-[30px]"
+                  style="background-color:#fff !important; color:#1e1e1e !important;"
+                )
+                  = slide.city + ', '
+                  em.text-orange-400.font-semibold &nbsp;#{slide.country}
+                h2(class="pt-[200px] text-[62px] font-bold uppercase text-white leading-[72px] w-1/2 mb-0")
+                  = slide.title
+                  br
+                  = slide.subtitle
+  .swiper-pagination
+  // Arrows
+  .swiper-button-prev
+  .swiper-button-next

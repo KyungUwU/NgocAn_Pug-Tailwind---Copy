@@ -1,0 +1,7 @@
+// Mixin Font Awesome Solid Icon
+mixin Icon(name, extraClass)
+  i(class=`fa fa-${name} ${extraClass || ''}`)
+
+// Mixin Font Awesome Brand Icon
+mixin BrandIcon(name, extraClass)
+  i(class=`fab fa-${name} ${extraClass || ''}`)

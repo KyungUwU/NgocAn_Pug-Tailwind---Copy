@@ -1,0 +1,29 @@
+// Featured Section
+.py-20
+  .container.mx-auto.grid(class="md:grid-cols-3 gap-8")
+
+    // Column 1 - Image
+    .relative.rounded-lg.overflow-hidden.shadow
+      img(src="/assets/images/featured.jpg", alt="Featured")
+      a(
+        href="properties-details.html"
+        class="absolute inset-0 flex items-center justify-center"
+      )
+        img(src="/assets/images/featured-icon.png", class="w-12")
+
+    // Column 2 - Accordion
+    .space-y-4
+      h2.text-2xl.font-bold.mb-4 Best Apartment & Sea View
+      each item in accordionItems
+        details.border.border-gray-200.rounded
+          summary.cursor-pointer.p-4.font-medium #{item.q}
+          p.p-4.text-gray-600 #{item.a}
+
+    // Column 3 - Info Items
+    .grid.grid-cols-2.gap-4
+      each info in infoItems
+        .flex.items-center.space-x-4
+          img(src="/assets/images/" + info.icon, class="w-12")
+          div
+            h4.font-semibold #{info.title}
+            p.text-sm.text-gray-500 #{info.desc}

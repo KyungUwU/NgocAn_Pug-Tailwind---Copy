@@ -1,0 +1,18 @@
+// Properties Grid
+.py-20.bg-gray-50
+  .container.mx-auto
+    h2.text-3xl.font-bold.mb-8 We Provide The Best Property You Like
+    .container.mx-auto.grid(class="md:grid-cols-3 gap-8")
+      each prop in properties
+        .bg-white.p-4.rounded.shadow
+          img(src="/assets/images/" + prop.img, alt=prop.title, class="rounded mb-4")
+          span.text-sm.text-orange-500 #{prop.title}
+          h6.text-blue-500.font-semibold.mt-2 #{prop.price}
+          h4.font-bold.text-lg.mt-1 #{prop.addr}
+          ul.text-sm.text-gray-600.mt-2
+            li Bedrooms: #{prop.beds}
+            li Bathrooms: #{prop.baths}
+          a(
+            href="properties-details.html",
+            class="block mt-4 bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition"
+          ) Schedule a visit

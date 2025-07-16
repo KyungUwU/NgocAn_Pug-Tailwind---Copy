@@ -1,0 +1,60 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Contact Us - Villa Agency
+
+    //- Fonts
+    link(
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    )
+
+    //- Stylesheets
+    link(rel="stylesheet", href="dist/tailwind.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css")
+
+  body(class="font-['Poppins'] bg-white text-gray-800")
+
+    //- Variables & Mixins
+    include ../includes/variables.pug
+    include ../includes/icon.pug
+
+    //- Preloader
+    include ../components/layouts/preloader.pug
+
+    //- Sub-header
+    include ../components/layouts/subheader.pug
+
+    //- Header (set active page)
+    -
+      const activePage = 'Contact Us';
+    include ../components/layouts/header.pug
+
+    //- Page Heading
+    .bg-gray-50.py-12
+      .container.mx-auto.text-center
+        span.text-sm.text-gray-500
+          a(href="index.html", class="hover:text-orange-500") Home
+          |  / Contact Us
+        h1.text-3xl.font-bold.mt-2 Contact Us
+
+    //- Contact Section (Form + Map)
+    include ../components/sections/contactSection.pug
+
+    //- Footer
+    include ../components/layouts/footer.pug
+
+    //- Scripts
+    script.
+      window.addEventListener('load', function () {
+        const preloader = document.getElementById('js-preloader');
+        if (preloader) {
+          preloader.style.transition = 'opacity 0.5s ease';
+          preloader.style.opacity = '0';
+          setTimeout(function () {
+            preloader.style.display = 'none';
+          }, 500);
+        }
+      });

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Us - Villa Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body class="font-['Poppins'] bg-white text-gray-800">
+    <!-- Navigation-->
+    <!-- Mixin Font Awesome Solid Icon-->
+    <!-- Mixin Font Awesome Brand Icon-->
+    <div class="js-preloader fixed inset-0 bg-white z-50 flex items-center justify-center" id="js-preloader">
+      <div class="preloader-inner flex flex-col items-center"><span class="dot w-4 h-4 bg-orange-500 rounded-full mb-2"></span>
+        <div class="dots flex space-x-1"><span class="w-2 h-2 bg-orange-500 rounded-full animate-bounce"></span><span class="w-2 h-2 bg-orange-500 rounded-full animate-bounce"></span><span class="w-2 h-2 bg-orange-500 rounded-full animate-bounce"></span></div>
+      </div>
+    </div>
+    <div class="bg-gray-100 py-2">
+      <div class="container mx-auto flex flex-wrap justify-between items-center text-sm text-gray-600">
+        <ul class="flex space-x-4">
+          <li class="flex items-center gap-1"><i class="fa fa-envelope text-orange-500"></i>info@company.com</li>
+          <li class="flex items-center gap-1"><i class="fa fa-map text-orange-500"></i>Sunny Isles Beach, FL 33160</li>
+        </ul>
+        <ul class="flex space-x-3">
+          <li><a class="hover:text-orange-500 transition" href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a class="hover:text-orange-500 transition" href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a class="hover:text-orange-500 transition" href="#"><i class="fab fa-linkedin"></i></a></li>
+          <li><a class="hover:text-orange-500 transition" href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <header class="sticky top-0 bg-white shadow z-50">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center"><a class="text-2xl font-bold text-black-500" href="index.html">VILLA</a>
+        <ul class="flex space-x-6">
+          <li><a class="hover:text-orange-500" href="index.html">Home</a></li>
+          <li><a class="hover:text-orange-500" href="properties.html">Properties</a></li>
+          <li><a class="hover:text-orange-500" href="properties-details.html">Property Details</a></li>
+          <li><a class="text-orange-500 font-semibold" href="contact.html">Contact Us</a></li>
+          <li><a class="text-orange-500 flex items-center" href="#"><i class="fa fa-calendar mr-1"></i>Schedule a visit</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="bg-gray-50 py-12">
+      <div class="container mx-auto text-center"><span class="text-sm text-gray-500"><a class="hover:text-orange-500" href="index.html">Home</a> / Contact Us</span>
+        <h1 class="text-3xl font-bold mt-2">Contact Us</h1>
+      </div>
+    </div>
+    <!-- Contact Section Heading-->
+    <div class="contact section py-20">
+      <div class="container mx-auto">
+        <div class="text-center max-w-xl mx-auto">
+          <h6 class="text-orange-500 font-semibold mb-2">Contact Us</h6>
+          <h2 class="text-3xl md:text-4xl font-bold mb-8">Get In Touch With Our Agents</h2>
+        </div>
+      </div>
+    </div>
+    <!-- Contact Content-->
+    <div class="contact-content">
+      <div class="container mx-auto grid md:grid-cols-2 gap-8">
+        <!-- Contact Form-->
+        <form class="grid gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700" for="name">Full Name</label>
+            <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="name" type="text" name="name" placeholder="Your Name..." required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700" for="email">Email Address</label>
+            <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="email" type="email" name="email" placeholder="Your Email..." required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700" for="subject">Subject</label>
+            <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="subject" type="text" name="subject" placeholder="Subject...">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700" for="message">Message</label>
+            <textarea class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="message" name="message" rows="4" placeholder="Your Message..."></textarea>
+          </div>
+          <div>
+            <button class="bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600 transition" type="submit">Send Message</button>
+          </div>
+        </form>
+        <!-- Map-->
+        <div class="w-full">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth" width="100%" height="500" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-gray-100 py-6">
+      <div class="container mx-auto text-center text-sm text-gray-600">
+        © 2048 Villa Agency Co., Ltd. All rights reserved.
+        Design by<a class="text-orange-500 hover:underline" href="https://templatemo.com" target="_blank">TemplateMo</a>
+      </div>
+    </footer>
+    <script>
+      window.addEventListener('load', function () {
+        const preloader = document.getElementById('js-preloader');
+        if (preloader) {
+          preloader.style.transition = 'opacity 0.5s ease';
+          preloader.style.opacity = '0';
+          setTimeout(function () {
+            preloader.style.display = 'none';
+          }, 500);
+        }
+      });
+    </script>
+  </body>
+</html>

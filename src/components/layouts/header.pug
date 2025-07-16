@@ -1,0 +1,14 @@
+header.sticky.top-0.bg-white.shadow.z-50
+  .container.mx-auto.px-4.py-4.flex.justify-between.items-center
+    a(href="index.html").text-2xl.font-bold.text-black-500 VILLA
+    ul.flex.space-x-6
+      each navItem in navItems
+        li
+          a(
+            href=navItem.href
+            class=(navItem.label === activePage ? 'text-orange-500 font-semibold' : 'hover:text-orange-500')
+          ) #{navItem.label}
+      li
+        a(href="#", class="text-orange-500 flex items-center")
+          i.fa.fa-calendar.mr-1
+          | Schedule a visit

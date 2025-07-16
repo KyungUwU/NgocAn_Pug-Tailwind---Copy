@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Properties - Villa Agency</title>
+    <!--+ Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <!--+ Stylesheets-->
+    <link rel="stylesheet" href="dist/tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body class="font-['Poppins'] bg-white text-gray-800">
+    <!--+ Variables-->
+    <!-- Navigation-->
+    <!--+ Icon Mixin-->
+    <!-- Mixin Font Awesome Solid Icon-->
+    <!-- Mixin Font Awesome Brand Icon-->
+    <!--+ Properties Card Mixin-->
+    <!--+ Preloader-->
+    <div class="js-preloader fixed inset-0 bg-white z-50 flex items-center justify-center" id="js-preloader">
+      <div class="preloader-inner flex flex-col items-center"><span class="dot w-4 h-4 bg-orange-500 rounded-full mb-2"></span>
+        <div class="dots flex space-x-1"><span class="w-2 h-2 bg-orange-500 rounded-full animate-bounce"></span><span class="w-2 h-2 bg-orange-500 rounded-full animate-bounce"></span><span class="w-2 h-2 bg-orange-500 rounded-full animate-bounce"></span></div>
+      </div>
+    </div>
+    <!--+ Sub-header-->
+    <div class="bg-gray-100 py-2">
+      <div class="container mx-auto flex flex-wrap justify-between items-center text-sm text-gray-600">
+        <ul class="flex space-x-4">
+          <li class="flex items-center gap-1"><i class="fa fa-envelope text-orange-500"></i>info@company.com</li>
+          <li class="flex items-center gap-1"><i class="fa fa-map text-orange-500"></i>Sunny Isles Beach, FL 33160</li>
+        </ul>
+        <ul class="flex space-x-3">
+          <li><a class="hover:text-orange-500 transition" href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a class="hover:text-orange-500 transition" href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a class="hover:text-orange-500 transition" href="#"><i class="fab fa-linkedin"></i></a></li>
+          <li><a class="hover:text-orange-500 transition" href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!--+ Header-->
+    <header class="sticky top-0 bg-white shadow z-50">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center"><a class="text-2xl font-bold text-black-500" href="index.html">VILLA</a>
+        <ul class="flex space-x-6">
+          <li><a class="hover:text-orange-500" href="index.html">Home</a></li>
+          <li><a class="text-orange-500 font-semibold" href="properties.html">Properties</a></li>
+          <li><a class="hover:text-orange-500" href="properties-details.html">Property Details</a></li>
+          <li><a class="hover:text-orange-500" href="contact.html">Contact Us</a></li>
+          <li><a class="text-orange-500 flex items-center" href="#"><i class="fa fa-calendar mr-1"></i>Schedule a visit</a></li>
+        </ul>
+      </div>
+    </header>
+    <!--+ Page Heading-->
+    <div class="bg-gray-50 py-12">
+      <div class="container mx-auto text-center"><span class="text-sm text-gray-500"><a class="hover:text-orange-500" href="index.html">Home</a> / Properties</span>
+        <h1 class="text-3xl font-bold mt-2">Properties</h1>
+      </div>
+    </div>
+    <!--+ Filter Buttons-->
+    <div class="container mx-auto py-6 flex flex-wrap gap-3 justify-center">
+      <button class="filter-btn px-4 py-2 rounded border hover:bg-orange-500 hover:text-white transition" data-filter="*">Apartment</button>
+      <button class="filter-btn px-4 py-2 rounded border hover:bg-orange-500 hover:text-white transition" data-filter=".villahouse">Villa House</button>
+      <button class="filter-btn px-4 py-2 rounded border hover:bg-orange-500 hover:text-white transition" data-filter=".penthouse">Penthouse</button>
+    </div>
+    <!--+ Properties Grid-->
+    <div class="bg-gray-50 py-12">
+      <div class="container mx-auto">
+        <div class="grid md:grid-cols-3 gap-8">
+              <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-01.jpg" alt="Luxury Villa"><span class="text-sm text-orange-500">Luxury Villa</span>
+                <h6 class="text-blue-500 font-semibold mt-2">$2,264,000</h6>
+                <h4 class="font-bold text-lg mt-1">18 New Street Miami, OR 97219</h4>
+                <ul class="text-sm text-gray-600 mt-2">
+                  <li>Bedrooms: 8</li>
+                  <li>Bathrooms: 8</li>
+                </ul><a class="block mt-4 bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition" href="properties-details.html">Schedule a visit</a>
+              </div>
+              <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-02.jpg" alt="Luxury Villa"><span class="text-sm text-orange-500">Luxury Villa</span>
+                <h6 class="text-blue-500 font-semibold mt-2">$1,180,000</h6>
+                <h4 class="font-bold text-lg mt-1">54 Mid Street Florida, OR 27001</h4>
+                <ul class="text-sm text-gray-600 mt-2">
+                  <li>Bedrooms: 6</li>
+                  <li>Bathrooms: 5</li>
+                </ul><a class="block mt-4 bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition" href="properties-details.html">Schedule a visit</a>
+              </div>
+              <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-03.jpg" alt="Luxury Villa"><span class="text-sm text-orange-500">Luxury Villa</span>
+                <h6 class="text-blue-500 font-semibold mt-2">$1,460,000</h6>
+                <h4 class="font-bold text-lg mt-1">26 Old Street Miami, OR 38540</h4>
+                <ul class="text-sm text-gray-600 mt-2">
+                  <li>Bedrooms: 5</li>
+                  <li>Bathrooms: 4</li>
+                </ul><a class="block mt-4 bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition" href="properties-details.html">Schedule a visit</a>
+              </div>
+        </div>
+      </div>
+    </div>
+    <!--+ Pagination-->
+    <div class="container mx-auto flex justify-center space-x-2 mt-8"><a class="bg-gray-200 text-gray-800 hover:bg-orange-500 hover:text-white px-3 py-1 rounded" href="#">1</a><a class="bg-orange-500 text-white px-3 py-1 rounded" href="#">2</a><a class="bg-gray-200 text-gray-800 hover:bg-orange-500 hover:text-white px-3 py-1 rounded" href="#">3</a><a class="bg-gray-200 text-gray-800 hover:bg-orange-500 hover:text-white px-3 py-1 rounded" href="#">&gt;&gt;</a>
+    </div>
+    <!--+ Footer-->
+    <footer class="bg-gray-100 py-6">
+      <div class="container mx-auto text-center text-sm text-gray-600">
+        © 2048 Villa Agency Co., Ltd. All rights reserved.
+        Design by<a class="text-orange-500 hover:underline" href="https://templatemo.com" target="_blank">TemplateMo</a>
+      </div>
+    </footer>
+    <!--+ Preloader Script-->
+    <script>
+      window.addEventListener('load', function () {
+        const preloader = document.getElementById('js-preloader');
+        if (preloader) {
+          preloader.style.transition = 'opacity 0.5s ease';
+          preloader.style.opacity = '0';
+          setTimeout(function () {
+            preloader.style.display = 'none';
+          }, 500);
+        }
+      });
+    </script>
+  </body>
+</html>

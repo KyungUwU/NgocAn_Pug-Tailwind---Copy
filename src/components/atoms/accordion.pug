@@ -1,0 +1,5 @@
+mixin Accordion(items)
+  each item in items
+    details.border.border-gray-200.rounded
+      summary.cursor-pointer.p-4.font-medium #{item.q}
+      p.p-4.text-gray-600 #{item.a}

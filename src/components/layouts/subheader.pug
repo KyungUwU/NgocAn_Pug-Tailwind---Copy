@@ -1,0 +1,14 @@
+.bg-gray-100.py-2
+  .container.mx-auto.flex.flex-wrap.justify-between.items-center.text-sm.text-gray-600
+    ul.flex.space-x-4
+      li.flex.items-center.gap-1
+        i.fa.fa-envelope.text-orange-500
+        | info@company.com
+      li.flex.items-center.gap-1
+        i.fa.fa-map.text-orange-500
+        | Sunny Isles Beach, FL 33160
+    ul.flex.space-x-3
+      each icon in socialIcons
+        li
+          a(href="#", class="hover:text-orange-500 transition")
+            i(class="fab fa-" + icon)

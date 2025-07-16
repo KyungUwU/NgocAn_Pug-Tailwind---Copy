@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Villa Agency - Real Estate Tailwind</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap">
+    <link rel="stylesheet" href="/dist/tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="font-['Poppins'] bg-white text-gray-800">
+    <!-- Navigation-->
+    <!-- Mixin Font Awesome Solid Icon-->
+    <!-- Mixin Font Awesome Brand Icon-->
+    <div class="js-preloader fixed inset-0 bg-white z-50 flex items-center justify-center" id="js-preloader">
+      <div class="preloader-inner flex flex-col items-center"><span class="dot w-4 h-4 bg-orange-500 rounded-full mb-2"></span>
+        <div class="dots flex space-x-1"><span class="w-2 h-2 bg-orange-500 rounded-full animate-bounce"></span><span class="w-2 h-2 bg-orange-500 rounded-full animate-bounce"></span><span class="w-2 h-2 bg-orange-500 rounded-full animate-bounce"></span></div>
+      </div>
+    </div>
+    <div class="bg-gray-100 py-2">
+      <div class="container mx-auto flex flex-wrap justify-between items-center text-sm text-gray-600">
+        <ul class="flex space-x-4">
+          <li class="flex items-center gap-1"><i class="fa fa-envelope text-orange-500"></i>info@company.com</li>
+          <li class="flex items-center gap-1"><i class="fa fa-map text-orange-500"></i>Sunny Isles Beach, FL 33160</li>
+        </ul>
+        <ul class="flex space-x-3">
+          <li><a class="hover:text-orange-500 transition" href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a class="hover:text-orange-500 transition" href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a class="hover:text-orange-500 transition" href="#"><i class="fab fa-linkedin"></i></a></li>
+          <li><a class="hover:text-orange-500 transition" href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <header class="sticky top-0 bg-white shadow z-50">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center"><a class="text-2xl font-bold text-black-500" href="index.html">VILLA</a>
+        <ul class="flex space-x-6">
+          <li><a class="text-orange-500 font-semibold" href="index.html">Home</a></li>
+          <li><a class="hover:text-orange-500" href="properties.html">Properties</a></li>
+          <li><a class="hover:text-orange-500" href="properties-details.html">Property Details</a></li>
+          <li><a class="hover:text-orange-500" href="contact.html">Contact Us</a></li>
+          <li><a class="text-orange-500 flex items-center" href="#"><i class="fa fa-calendar mr-1"></i>Schedule a visit</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="relative"></div>
+    <div class="swiper relative">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide bg-cover bg-center relative text-black font-sans" style="background-image: url('src/assets/images/banner-01.jpg')">
+          <div class="relative z-10 flex items-center justify-start w-full h-full">
+            <div class="pt-[-300px] pb-[320px] w-full pl-[200px]">
+              <div class="px-[293px] h-[600px] pt-[-300px] pb-[320px] w-full pl-[200px]">
+                <div class="flex flex-col items-start"><span class="category bg-white text-[#1e1e1e] text-base font-medium capitalize py-[6px] px-[15px] mb-[30px]" style="background-color:#fff !important; color:#1e1e1e !important;">Toronto, <em class="text-orange-400 font-semibold">&nbsp;Canada</em></span>
+                  <h2 class="pt-[200px] text-[62px] font-bold uppercase text-white leading-[72px] w-1/2 mb-0">Hurry!<br>Get the Best Villa for you
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide bg-cover bg-center relative text-black font-sans" style="background-image: url('src/assets/images/banner-02.jpg')">
+          <div class="relative z-10 flex items-center justify-start w-full h-full">
+            <div class="pt-[-300px] pb-[320px] w-full pl-[200px]">
+              <div class="px-[293px] h-[600px] pt-[-300px] pb-[320px] w-full pl-[200px]">
+                <div class="flex flex-col items-start"><span class="category bg-white text-[#1e1e1e] text-base font-medium capitalize py-[6px] px-[15px] mb-[30px]" style="background-color:#fff !important; color:#1e1e1e !important;">Melbourne, <em class="text-orange-400 font-semibold">&nbsp;Australia</em></span>
+                  <h2 class="pt-[200px] text-[62px] font-bold uppercase text-white leading-[72px] w-1/2 mb-0">Be Quick!<br>Get the best villa in town
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide bg-cover bg-center relative text-black font-sans" style="background-image: url('src/assets/images/banner-03.jpg')">
+          <div class="relative z-10 flex items-center justify-start w-full h-full">
+            <div class="pt-[-300px] pb-[320px] w-full pl-[200px]">
+              <div class="px-[293px] h-[600px] pt-[-300px] pb-[320px] w-full pl-[200px]">
+                <div class="flex flex-col items-start"><span class="category bg-white text-[#1e1e1e] text-base font-medium capitalize py-[6px] px-[15px] mb-[30px]" style="background-color:#fff !important; color:#1e1e1e !important;">Miami, <em class="text-orange-400 font-semibold">&nbsp;South Florida</em></span>
+                  <h2 class="pt-[200px] text-[62px] font-bold uppercase text-white leading-[72px] w-1/2 mb-0">Act Now!<br>Get the highest level penthouse
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <!-- Arrows-->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <!-- Featured Section-->
+    <div class="py-20">
+      <div class="container mx-auto grid md:grid-cols-3 gap-8">
+        <!-- Column 1 - Image-->
+        <div class="relative rounded-lg overflow-hidden shadow"><img src="/assets/images/featured.jpg" alt="Featured"><a class="absolute inset-0 flex items-center justify-center" href="properties-details.html"><img class="w-12" src="/assets/images/featured-icon.png"></a></div>
+        <!-- Column 2 - Accordion-->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold mb-4">Best Apartment & Sea View</h2>
+          <details class="border border-gray-200 rounded">
+            <summary class="cursor-pointer p-4 font-medium">Best useful links?</summary>
+            <p class="p-4 text-gray-600">Get the best villa website template in HTML CSS and Bootstrap for your business.</p>
+          </details>
+          <details class="border border-gray-200 rounded">
+            <summary class="cursor-pointer p-4 font-medium">How does this work?</summary>
+            <p class="p-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </details>
+          <details class="border border-gray-200 rounded">
+            <summary class="cursor-pointer p-4 font-medium">Why is Villa Agency the best?</summary>
+            <p class="p-4 text-gray-600">Because we provide top quality service and premium properties.</p>
+          </details>
+        </div>
+        <!-- Column 3 - Info Items-->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="flex items-center space-x-4"><img class="w-12" src="/assets/images/info-icon-01.png">
+            <div>
+              <h4 class="font-semibold">250 m2</h4>
+              <p class="text-sm text-gray-500">Total Flat Space</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4"><img class="w-12" src="/assets/images/info-icon-02.png">
+            <div>
+              <h4 class="font-semibold">Contract</h4>
+              <p class="text-sm text-gray-500">Contract Ready</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4"><img class="w-12" src="/assets/images/info-icon-03.png">
+            <div>
+              <h4 class="font-semibold">Payment</h4>
+              <p class="text-sm text-gray-500">Payment Process</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4"><img class="w-12" src="/assets/images/info-icon-04.png">
+            <div>
+              <h4 class="font-semibold">Safety</h4>
+              <p class="text-sm text-gray-500">24/7 Under Control</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section bg-white py-12">
+      <div class="container mx-auto">
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div class="relative bg-orange-50 p-6 rounded-lg">
+            <!-- Orange dot-->
+            <div class="absolute -top-3 left-1"/>
+            <2 class="transform -translate-x-1"/>
+            <2>
+              <div class="w-6 h-6 bg-orange-500 rounded-full"></div>
+            </2>
+            <!-- Number-->
+            <h2 class="text-4xl font-bold text-orange-500">34</h2>
+            <!-- Label-->
+            <p class="mt-2 text-gray-700">Buildings Finished Now</p>
+          </div>
+          <div class="relative bg-orange-50 p-6 rounded-lg">
+            <!-- Orange dot-->
+            <div class="absolute -top-3 left-1"/>
+            <2 class="transform -translate-x-1"/>
+            <2>
+              <div class="w-6 h-6 bg-orange-500 rounded-full"></div>
+            </2>
+            <!-- Number-->
+            <h2 class="text-4xl font-bold text-orange-500">12</h2>
+            <!-- Label-->
+            <p class="mt-2 text-gray-700">Years Experience</p>
+          </div>
+          <div class="relative bg-orange-50 p-6 rounded-lg">
+            <!-- Orange dot-->
+            <div class="absolute -top-3 left-1"/>
+            <2 class="transform -translate-x-1"/>
+            <2>
+              <div class="w-6 h-6 bg-orange-500 rounded-full"></div>
+            </2>
+            <!-- Number-->
+            <h2 class="text-4xl font-bold text-orange-500">24</h2>
+            <!-- Label-->
+            <p class="mt-2 text-gray-700">Awards Won 2023</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section py-20">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Find Your Best Deal Right Now!</h2>
+        <ul class="flex flex-wrap justify-center space-x-4 mb-8">
+          <li>
+            <button class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-500 hover:text-white transition">Apartment</button>
+          </li>
+          <li>
+            <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-orange-500 hover:text-white transition">Villa House</button>
+          </li>
+          <li>
+            <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-orange-500 hover:text-white transition">Penthouse</button>
+          </li>
+        </ul>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="space-y-2">
+            <p class="text-gray-600">Total Flat Space: 185 m2</p>
+            <p class="text-gray-600">Floor Number: 26th</p>
+            <p class="text-gray-600">Rooms: 4</p>
+            <p class="text-gray-600">Parking Available: Yes</p>
+            <p class="text-gray-600">Payment Process: Bank</p>
+          </div><img class="rounded shadow-md" src="/assets/images/deal-01.jpg" alt="Best Deal">
+          <div class="flex flex-col justify-between">
+            <p class="text-gray-600">Discover this premium property with modern design, spacious rooms, and great amenities for comfortable living.</p><a class="inline-block bg-orange-500 text-white px-6 py-3 rounded mt-4 hover:bg-orange-600 transition" href="property-details.html">Schedule a visit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Properties Grid-->
+    <div class="py-20 bg-gray-50">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8">We Provide The Best Property You Like</h2>
+        <div class="container mx-auto grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-01.jpg" alt="Luxury Villa"><span class="text-sm text-orange-500">Luxury Villa</span>
+            <h6 class="text-blue-500 font-semibold mt-2">$2,264,000</h6>
+            <h4 class="font-bold text-lg mt-1">18 New Street Miami, OR 97219</h4>
+            <ul class="text-sm text-gray-600 mt-2">
+              <li>Bedrooms: 8</li>
+              <li>Bathrooms: 8</li>
+            </ul><a class="block mt-4 bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition" href="properties-details.html">Schedule a visit</a>
+          </div>
+          <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-02.jpg" alt="Luxury Villa"><span class="text-sm text-orange-500">Luxury Villa</span>
+            <h6 class="text-blue-500 font-semibold mt-2">$1,180,000</h6>
+            <h4 class="font-bold text-lg mt-1">54 Mid Street Florida, OR 27001</h4>
+            <ul class="text-sm text-gray-600 mt-2">
+              <li>Bedrooms: 6</li>
+              <li>Bathrooms: 5</li>
+            </ul><a class="block mt-4 bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition" href="properties-details.html">Schedule a visit</a>
+          </div>
+          <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-03.jpg" alt="Luxury Villa"><span class="text-sm text-orange-500">Luxury Villa</span>
+            <h6 class="text-blue-500 font-semibold mt-2">$1,460,000</h6>
+            <h4 class="font-bold text-lg mt-1">26 Old Street Miami, OR 38540</h4>
+            <ul class="text-sm text-gray-600 mt-2">
+              <li>Bedrooms: 5</li>
+              <li>Bathrooms: 4</li>
+            </ul><a class="block mt-4 bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition" href="properties-details.html">Schedule a visit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Contact Section Heading-->
+    <div class="contact section py-20">
+      <div class="container mx-auto">
+        <div class="text-center max-w-xl mx-auto">
+          <h6 class="text-orange-500 font-semibold mb-2">Contact Us</h6>
+          <h2 class="text-3xl md:text-4xl font-bold mb-8">Get In Touch With Our Agents</h2>
+        </div>
+      </div>
+    </div>
+    <!-- Contact Content-->
+    <div class="contact-content">
+      <div class="container mx-auto grid md:grid-cols-2 gap-8">
+        <!-- Contact Form-->
+        <form class="grid gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700" for="name">Full Name</label>
+            <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="name" type="text" name="name" placeholder="Your Name..." required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700" for="email">Email Address</label>
+            <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="email" type="email" name="email" placeholder="Your Email..." required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700" for="subject">Subject</label>
+            <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="subject" type="text" name="subject" placeholder="Subject...">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700" for="message">Message</label>
+            <textarea class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="message" name="message" rows="4" placeholder="Your Message..."></textarea>
+          </div>
+          <div>
+            <button class="bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600 transition" type="submit">Send Message</button>
+          </div>
+        </form>
+        <!-- Map-->
+        <div class="w-full">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth" width="100%" height="500" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-gray-100 py-6">
+      <div class="container mx-auto text-center text-sm text-gray-600">
+        © 2048 Villa Agency Co., Ltd. All rights reserved.
+        Design by<a class="text-orange-500 hover:underline" href="https://templatemo.com" target="_blank">TemplateMo</a>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script>
+      window.addEventListener('load', function () {
+        const preloader = document.getElementById('js-preloader');
+        if (preloader) {
+          preloader.style.transition = 'opacity 0.5s ease';
+          preloader.style.opacity = '0';
+          setTimeout(function () {
+            preloader.style.display = 'none';
+          }, 500);
+        }
+      });
+    </script>
+    <script>
+      const swiper = new Swiper('.swiper', {
+        loop: true,
+        autoplay: { delay: 5000 },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+      });
+    </script>
+  </body>
+</html>
