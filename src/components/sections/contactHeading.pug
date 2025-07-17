@@ -2,38 +2,56 @@
 .contact.section.py-20(style="background-image: url('/assets/images/contact-bg.jpg');min-height: 550px; background-size: cover; background-position: center; margin-bottom: 400px")
   .container.mx-auto
     .text-center.max-w-xl.mx-auto
-      h6(class="text-[#ee626b] text-[15px] uppercase font-bold") | Contact Us
+      h6(style="color: #ee626b; font-size: 15px; text-transform: uppercase; font-weight: 700"  ) | Contact Us
       h2(class="text-3xl md:text-4xl font-bold mb-8 text-white") Get In Touch With Our Agents
 
-// Contact Content
-.contact-content
-  .container.mx-auto.grid(class="md:grid-cols-2 gap-8")
-    // Map
-    .w-full
-      iframe(
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth",
-        width="100%",
-        height="500",
-        style="border:0; border-radius:10px;",
-        allowfullscreen="",
-        loading="lazy"
-      )
-        // Contact Form
-    form.grid.gap-4
-      div
-        label.block.text-sm.font-medium.text-gray-700(for="name") Full Name
-        input#name(type="text", name="name", placeholder="Your Name...", required, class="mt-1 block w-full border-gray-300 rounded-md shadow-sm")
-      div
-        label.block.text-sm.font-medium.text-gray-700(for="email") Email Address
-        input#email(type="email", name="email", placeholder="Your Email...", required, class="mt-1 block w-full border-gray-300 rounded-md shadow-sm")
-      div
-        label.block.text-sm.font-medium.text-gray-700(for="subject") Subject
-        input#subject(type="text", name="subject", placeholder="Subject...", class="mt-1 block w-full border-gray-300 rounded-md shadow-sm")
-      div
-        label.block.text-sm.font-medium.text-gray-700(for="message") Message
-        textarea#message(name="message", rows="4", placeholder="Your Message...", class="mt-1 block w-full border-gray-300 rounded-md shadow-sm")
-      div
-        button(
-          type="submit",
-          class="bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600 transition"
-        ) Send Message
+
+    .contact-content(style="width:1200px; height: 400px; ")
+        .container.mx-auto.grid(class="md:grid-cols-2 gap-8")
+            .map
+                .w-full
+                iframe(
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth",
+                    width="100%",
+                    height="500",
+                    style="border:0; border-radius:10px;",
+                    allowfullscreen="",
+                    loading="lazy"
+                )
+                //- Contact cards row
+                .row.flex.justify-between.space-x-4.mt-8
+                    .col-lg-6(class="w-1/2",style="border-radius: 10px;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);padding: 35px 30px;background-color: #fff;")
+                        .item.phone.flex
+                            img(src="assets/images/phone-icon.png" )
+                            h6
+                                | 010-020-0340
+                                br
+                                span Phone Number
+
+                    .col-lg-6(class="w-1/2",style="border-radius: 10px;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);padding: 35px 30px;background-color: #fff;")
+                        .item.email.flex
+                            img(src="assets/images/email-icon.png" style="max-width: 52px;box-shadow: 0 0 10px rgba(0,0,0,0.1);")
+                            h6
+                                | info@villa.co
+                                br
+                                span Business Email
+                    
+            //- Contact Form
+            form.grid.gap-4(style="margin-left: 30px; border-radius: 10px;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);padding: 35px 30px;background-color: #fff;")
+                div
+                    label.block.text-sm.font-medium.text-gray-700(for="name") Full Name
+                    input#name(type="text", name="name", placeholder="Your Name...", required, class="mt-1 block w-full border-gray-300 rounded-md shadow-sm")
+                div
+                    label.block.text-sm.font-medium.text-gray-700(for="email") Email Address
+                    input#email(type="email", name="email", placeholder="Your Email...", required, class="mt-1 block w-full border-gray-300 rounded-md shadow-sm")
+                div
+                    label.block.text-sm.font-medium.text-gray-700(for="subject") Subject
+                    input#subject(type="text", name="subject", placeholder="Subject...", class="mt-1 block w-full border-gray-300 rounded-md shadow-sm")
+                div
+                    label.block.text-sm.font-medium.text-gray-700(for="message") Message
+                    textarea#message(name="message", rows="4", placeholder="Your Message...", class="mt-1 block w-full border-gray-300 rounded-md shadow-sm")
+                div
+                    button(
+                    type="submit",
+                    class="bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600 transition"
+                    ) Send Message
