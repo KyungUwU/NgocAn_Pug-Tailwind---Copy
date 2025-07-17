@@ -10,12 +10,12 @@
         img.block.w-full(src="/assets/images/featured.jpg", alt="Featured")
 
       //–– Icon overlay: nằm ngay sát trong khung .relative
-      a.absolute.z-20(
+      a.absolute.z-20.w-24.h-24(
         href="properties-details.html",
-        class="w-30 h-30 bg-orange-500 oval flex justify-center",
-        style="bottom: -15px; left: -50px; border-radius: 50%;"
+        class="w-30 h-30 oval flex justify-center",
+        style="bottom: -15px; left: -50px; border-radius: 50%; padding:20px; background-color:#f35525"
       )
-        img.w-24.h-24(src="/assets/images/featured-icon.png", alt="Icon", class="w-26 h-26")
+        img(src="/assets/images/featured-icon.png", alt="Icon")
 
     // Column 2 – FAQ Buttons with Toggle
     .space-y-4
@@ -39,8 +39,8 @@
           != item.a
 
     // Column 3 – Info Items
-    div(class="bg-white border border-gray-200 rounded-lg shadow-sm")
-      ul(class="divide-y divide-gray-200")
+    div(class="bg-white ")
+      ul(class="divide-y divide-gray-200 border border-gray-200 rounded-lg shadow-sm")
         each info in infoItems
           li(class="flex items-center gap-4 p-6")
             img(class="w-12 h-12" src=info.icon alt=info.title)
