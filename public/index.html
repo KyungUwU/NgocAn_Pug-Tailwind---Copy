@@ -96,7 +96,7 @@
         <div class="relative">         
           <!--–– Wrapper chỉ cho chính ảnh, bo tròn & clip-->
           <div class="overflow-hidden rounded-lg shadow"><img class="block w-full" src="/assets/images/featured.jpg" alt="Featured"></div>
-          <!--–– Icon overlay: nằm ngay sát trong khung .relative--><a class="absolute z-20 w-30 h-30 bg-orange-500 oval flex justify-center" href="properties-details.html" style="bottom: -15px; left: -50px; border-radius: 50%;"><img class="w-24 h-24 w-26 h-26" src="/assets/images/featured-icon.png" alt="Icon"></a>
+          <!--–– Icon overlay: nằm ngay sát trong khung .relative--><a class="absolute z-20 w-24 h-24 w-30 h-30 oval flex justify-center" href="properties-details.html" style="bottom: -15px; left: -50px; border-radius: 50%; padding:20px; background-color:#f35525"><img src="/assets/images/featured-icon.png" alt="Icon"></a>
         </div>
         <!-- Column 2 – FAQ Buttons with Toggle-->
         <div class="space-y-4">
@@ -119,8 +119,8 @@
           </div>
         </div>
         <!-- Column 3 – Info Items-->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-sm">
-          <ul class="divide-y divide-gray-200">
+        <div class="bg-white ">
+          <ul class="divide-y divide-gray-200 border border-gray-200 rounded-lg shadow-sm">
             <li class="flex items-center gap-4 p-6"><img class="w-12 h-12" src="assets/images/info-icon-01.png" alt="250 m2">
               <div>
                 <h4 class="font-semibold text-lg">250 m2</h4>
@@ -187,18 +187,18 @@
         });
       });
     </script>
-    <div class="video section py-20">
+    <div class="video section py-20 relative" style="background-image: url('/assets/images/video-bg.jpg');min-height: 550px; background-size: cover; background-position: center; margin-bottom: 400px">
       <div class="container mx-auto">
         <div class="text-center max-w-2xl mx-auto">
           <h6 class="text-orange-600 font-semibold mb-2">| Video View</h6>
-          <h2 class="text-3xl md:text-4xl font-bold mb-8">Get Closer View & Different Feeling</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">Get Closer View & Different Feeling</h2>
         </div>
       </div>
-    </div>
-    <div class="video-content">
-      <div class="container mx-auto">
-        <div class="flex justify-center">
-          <div class="relative"><img class="rounded shadow-lg" src="/assets/images/video-frame.jpg" alt="Video Frame"><a class="absolute inset-0 flex items-center justify-center" href="https://youtube.com" target="_blank"><i class="fa fa-play text-white text-4xl bg-orange-500 p-4 rounded-full hover:scale-110 transition"></i></a></div>
+      <div class="video-content absolute" style="width:1200px; height: 400px; bottom: 0; left: 50%; transform: translate(-50%, 50%);">
+        <div class="container mx-auto">
+          <div class="flex justify-center">
+            <div class="relative"><img class="rounded shadow-lg" src="/assets/images/video-frame.jpg" alt="Video Frame"><a class="absolute inset-0 flex items-center justify-center" href="https://youtube.com" target="_blank"><i class="fa fa-play text-white text-4xl bg-orange-600 p-4 rounded-full hover:scale-110 transition"></i></a></div>
+          </div>
         </div>
       </div>
     </div>
