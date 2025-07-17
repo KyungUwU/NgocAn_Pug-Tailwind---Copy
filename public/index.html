@@ -120,7 +120,7 @@
         </div>
         <!-- Column 3 – Info Items-->
         <div class="bg-white ">
-          <ul class="divide-y divide-gray-200 border border-gray-200 rounded-lg shadow-sm">
+          <ul class="divide-y divide-gray-200; border border-gray-200; rounded-lg; rounded-[10px]; shadow-[0_0_15px_rgba(0,0,0,0.15)]; px-[30px] py-[35px]">
             <li class="flex items-center gap-4 p-6"><img class="w-12 h-12" src="assets/images/info-icon-01.png" alt="250 m2">
               <div>
                 <h4 class="font-semibold text-lg">250 m2</h4>
@@ -207,7 +207,7 @@
         <div class="grid md:grid-cols-3 gap-8 text-center">
           <div class="relative bg-orange-50 p-6 rounded-lg">
             <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
-              <div class="w-6 h-6 bg-orange-500 rounded-full"></div>
+              <div class="w-6 h-6 bg-orange-500 rounded-full" style="position:absolute;width:50px;height:50px;background-color:#f35525;border-radius:50%;right:-25px;top:-25px;"></div>
             </div>
             <!-- Số-->
             <h2 class="text-4xl font-bold text-orange-500">34</h2>
@@ -216,7 +216,7 @@
           </div>
           <div class="relative bg-orange-50 p-6 rounded-lg">
             <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
-              <div class="w-6 h-6 bg-orange-500 rounded-full"></div>
+              <div class="w-6 h-6 bg-orange-500 rounded-full" style="position:absolute;width:50px;height:50px;background-color:#f35525;border-radius:50%;right:-25px;top:-25px;"></div>
             </div>
             <!-- Số-->
             <h2 class="text-4xl font-bold text-orange-500">12</h2>
@@ -225,7 +225,7 @@
           </div>
           <div class="relative bg-orange-50 p-6 rounded-lg">
             <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
-              <div class="w-6 h-6 bg-orange-500 rounded-full"></div>
+              <div class="w-6 h-6 bg-orange-500 rounded-full" style="position:absolute;width:50px;height:50px;background-color:#f35525;border-radius:50%;right:-25px;top:-25px;"></div>
             </div>
             <!-- Số-->
             <h2 class="text-4xl font-bold text-orange-500">24</h2>
@@ -319,43 +319,53 @@
         </div>
       </div>
     </div>
-    <!-- Contact Section Heading-->
-    <div class="contact section py-20">
+    <!-- Contact Section Heading in index.pug-->
+    <div class="contact section py-20" style="background-image: url('/assets/images/contact-bg.jpg');min-height: 550px; background-size: cover; background-position: center; margin-bottom: 400px">
       <div class="container mx-auto">
         <div class="text-center max-w-xl mx-auto">
-          <h6 class="text-orange-500 font-semibold mb-2">Contact Us</h6>
-          <h2 class="text-3xl md:text-4xl font-bold mb-8">Get In Touch With Our Agents</h2>
+          <h6 style="color: #ee626b; font-size: 15px; text-transform: uppercase; font-weight: 700">| Contact Us</h6>
+          <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">Get In Touch With Our Agents</h2>
         </div>
-      </div>
-    </div>
-    <!-- Contact Content-->
-    <div class="contact-content">
-      <div class="container mx-auto grid md:grid-cols-2 gap-8">
-        <!-- Contact Form-->
-        <form class="grid gap-4">
-          <div>
-            <label class="block text-sm font-medium text-gray-700" for="name">Full Name</label>
-            <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="name" type="text" name="name" placeholder="Your Name..." required>
+        <div class="contact-content" style="width:1200px; height: 400px; ">
+          <div class="container mx-auto grid md:grid-cols-2 gap-8">
+            <div class="map">
+              <div class="w-full"></div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth" width="100%" height="500" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
+              <div class="row flex justify-between space-x-4 mt-8">
+                <div class="col-lg-6 w-1/2" style="border-radius: 10px;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);padding: 35px 30px;background-color: #fff;">
+                  <div class="item phone flex"><img src="assets/images/phone-icon.png">
+                    <h6>010-020-0340<br><span>Phone Number</span></h6>
+                  </div>
+                </div>
+                <div class="col-lg-6 w-1/2" style="border-radius: 10px;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);padding: 35px 30px;background-color: #fff;">
+                  <div class="item email flex"><img src="assets/images/email-icon.png" style="max-width: 52px;box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                    <h6>info@villa.co<br><span>Business Email</span></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form class="grid gap-4" style="margin-left: 30px; border-radius: 10px;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);padding: 35px 30px;background-color: #fff;">
+              <div>
+                <label class="block text-sm font-medium text-gray-700" for="name">Full Name</label>
+                <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="name" type="text" name="name" placeholder="Your Name..." required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700" for="email">Email Address</label>
+                <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="email" type="email" name="email" placeholder="Your Email..." required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700" for="subject">Subject</label>
+                <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="subject" type="text" name="subject" placeholder="Subject...">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700" for="message">Message</label>
+                <textarea class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="message" name="message" rows="4" placeholder="Your Message..."></textarea>
+              </div>
+              <div>
+                <button class="bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600 transition" type="submit">Send Message</button>
+              </div>
+            </form>
           </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700" for="email">Email Address</label>
-            <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="email" type="email" name="email" placeholder="Your Email..." required>
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700" for="subject">Subject</label>
-            <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="subject" type="text" name="subject" placeholder="Subject...">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700" for="message">Message</label>
-            <textarea class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="message" name="message" rows="4" placeholder="Your Message..."></textarea>
-          </div>
-          <div>
-            <button class="bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600 transition" type="submit">Send Message</button>
-          </div>
-        </form>
-        <!-- Map-->
-        <div class="w-full">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth" width="100%" height="500" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
     </div>
