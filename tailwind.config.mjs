@@ -8,6 +8,15 @@ export default {
     "./src/components/**/*.pug",
     "./src/includes/**/*.pug"
   ],
+    safelist: [
+    'hover:text-orange-600',
+    'text-orange-600',
+    'bg-orange-500',
+    'bg-orange-600',
+    'bg-orange-700',
+    'text-orange-600',
+    'hover:bg-orange-600',
+  ],
   theme: {
     extend: {
       colors: {

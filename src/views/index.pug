@@ -39,6 +39,20 @@ html(lang="en")
     //- Featured Section
     include ../components/sections/featuredSection.pug
 
+
+    .video.section.py-20
+      .container.mx-auto
+        .text-center.max-w-2xl.mx-auto
+          h6.text-orange-600.font-semibold.mb-2 | Video View
+          h2(class="text-3xl md:text-4xl font-bold mb-8") Get Closer View & Different Feeling
+
+    .video-content
+      .container.mx-auto
+        .flex.justify-center
+          .relative
+            img(src="/assets/images/video-frame.jpg", alt="Video Frame", class="rounded shadow-lg")
+            a(href="https://youtube.com" target="_blank").absolute.inset-0.flex.items-center.justify-center
+              i(class="fa fa-play text-white text-4xl bg-orange-500 p-4 rounded-full hover:scale-110 transition")
     //- Fun Facts
     include ../components/atoms/funFacts.pug
 

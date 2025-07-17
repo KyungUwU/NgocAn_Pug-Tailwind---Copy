@@ -1,29 +1,87 @@
-// Featured Section
+// file: src/components/sections/featuredSection.pug
+
 .py-20
   .container.mx-auto.grid(class="md:grid-cols-3 gap-8")
 
-    // Column 1 - Image
-    .relative.rounded-lg.overflow-hidden.shadow
-      img(src="/assets/images/featured.jpg", alt="Featured")
-      a(
-        href="properties-details.html"
-        class="absolute inset-0 flex items-center justify-center"
+    // Column 1 – Image
+    .relative          
+      //–– Wrapper chỉ cho chính ảnh, bo tròn & clip
+      .overflow-hidden.rounded-lg.shadow
+        img.block.w-full(src="/assets/images/featured.jpg", alt="Featured")
+
+      //–– Icon overlay: nằm ngay sát trong khung .relative
+      a.absolute.z-20(
+        href="properties-details.html",
+        class="w-30 h-30 bg-orange-500 oval flex justify-center",
+        style="bottom: -15px; left: -50px; border-radius: 50%;"
       )
-        img(src="/assets/images/featured-icon.png", class="w-12")
+        img.w-24.h-24(src="/assets/images/featured-icon.png", alt="Icon", class="w-26 h-26")
 
-    // Column 2 - Accordion
+    // Column 2 – FAQ Buttons with Toggle
     .space-y-4
+      h3.text-xl.text-orange-500.font-semibold.mb-4 Featured
       h2.text-2xl.font-bold.mb-4 Best Apartment & Sea View
-      each item in accordionItems
-        details.border.border-gray-200.rounded
-          summary.cursor-pointer.p-4.font-medium #{item.q}
-          p.p-4.text-gray-600 #{item.a}
 
-    // Column 3 - Info Items
-    .grid.grid-cols-2.gap-4
-      each info in infoItems
-        .flex.items-center.space-x-4
-          img(src="/assets/images/" + info.icon, class="w-12")
-          div
-            h4.font-semibold #{info.title}
-            p.text-sm.text-gray-500 #{info.desc}
+      each item, idx in accordionItems
+        // Button to toggle answer
+        button.faq-btn.w-full.text-left.flex.justify-between.items-center.p-4.border.border-gray-200.rounded.font-medium(
+          type="button"
+          aria-expanded="false"
+          aria-controls='faq' + idx
+        )
+          span #{item.q}
+          i.lucide-chevron-down.transition-transform.duration-200
+
+        // Answer panel, hidden by default
+        div.faq-content.mt-2.p-4.border-t.border-gray-200.text-gray-600.hidden(
+          id='faq' + idx
+        )
+          != item.a
+
+    // Column 3 – Info Items
+    div(class="bg-white border border-gray-200 rounded-lg shadow-sm")
+      ul(class="divide-y divide-gray-200")
+        each info in infoItems
+          li(class="flex items-center gap-4 p-6")
+            img(class="w-12 h-12" src=info.icon alt=info.title)
+            div
+              h4(class="font-semibold text-lg")= info.title
+              p(class="text-sm text-gray-500")= info.desc
+
+// Inline script to wire up the toggle behavior
+script.
+  const buttons = Array.from(document.querySelectorAll('.faq-btn'));
+  const panels  = buttons.map(b => document.getElementById(b.getAttribute('aria-controls')));
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 1. Close all other panels
+      buttons.forEach(other => {
+        if (other !== btn) {
+          other.setAttribute('aria-expanded', 'false');
+          panels.find(p => p.id === other.getAttribute('aria-controls')).classList.add('hidden');
+          other.querySelector('i').classList.remove('rotate-180');
+          other.classList.remove('text-orange-500');
+          other.classList.add('text-black');
+        }
+      });
+
+      // 2. Toggle this one
+      const id = btn.getAttribute('aria-controls');
+      const panel = document.getElementById(id);
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      panel.classList.toggle('hidden');
+      btn.querySelector('i').classList.toggle('rotate-180');
+
+      // 3. Highlight active button
+      if (!isOpen) {
+        btn.classList.remove('text-black');
+        btn.classList.add('text-orange-500');
+      } else {
+        btn.classList.remove('text-orange-500');
+        btn.classList.add('text-black');
+      }
+    });
+  });
