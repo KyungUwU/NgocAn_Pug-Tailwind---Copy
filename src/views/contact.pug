@@ -34,12 +34,12 @@ html(lang="en")
     include ../components/layouts/header.pug
 
     //- Page Heading
-    .bg-gray-50.py-12
+    .bg-gray-50.py-12(style="background-image: url('/assets/images/page-heading-bg.jpg');min-height: 550px; background-size: cover; background-position: center; margin-bottom: 400px")
       .container.mx-auto.text-center
         span.text-sm.text-gray-500
           a(href="index.html", class="hover:text-orange-500") Home
           |  / Contact Us
-        h1.text-3xl.font-bold.mt-2 Contact Us
+        h1.text-3xl.font-bold.mt-2.text-white Contact Us
 
     //- Contact Section (Form + Map)
     include ../components/sections/contactSection.pug
