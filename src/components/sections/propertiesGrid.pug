@@ -12,12 +12,12 @@
           span(style="background-color: #fbd9cf; color: #1e1e1e; padding: 5px 12px; border-radius: 5px; margin-top: 25px;") #{prop.title}
           h6.font-bold.mt-2(style="color:#f35525; padding-left:150px") #{prop.price}
         h4.font-bold.text-lg.mt-1 #{prop.addr}
-        ul.text-sm.text-gray-600.mt-2
-          li Bedrooms: #{prop.beds} 
-          li Bathrooms: #{prop.baths}
-          li Area: #{prop.area} m² 
-          li Floor: #{prop.floor} 
-          li Parking: #{prop.parking}
+        ul.space-x-4(class="text-1xl text-gray-600 mt-2 flex flex-wrap gap-x-8 gap-y-8")
+          li Bedrooms: #[strong= prop.beds]
+          li Bathrooms: #[strong= prop.baths]
+          li Area: #[strong= prop.area + ' m2']
+          li Floor: #[strong= prop.floor]
+          li Parking: #[strong= prop.parking]
         a(
           href="properties-details.html",
           class="mt-4 bg-black text-white inline-flex items-center rounded-full width-full mx-auto"

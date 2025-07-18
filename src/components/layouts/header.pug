@@ -1,18 +1,31 @@
+// src/components/layouts/header.pug
+
+//— pull in one, single navItems declaration
+include ../../../includes/variables.pug
+
 header.sticky.top-0.bg-white.shadow.z-50
   .container.mx-auto.px-4.py-4.flex.justify-between.items-center
-    a(href="index.html").text-2xl.font-bold.text-black-500 VILLA
+    a(href="/").text-2xl.font-bold.text-black VILLA
+
     ul.flex.space-x-6.items-center
       each navItem in navItems
+        //— compute active status per iteration
+        - var isActive = navItem.label === activePage
         li
           a(
-            href=navItem.href
-            class=(navItem.label === activePage ? 'text-orange-500 font-semibold' : 'hover:text-orange-500')
+            href=navItem.href,
+            class= isActive
+              ? 'text-orange-500 font-semibold'
+              : 'hover:text-orange-500'
           ) #{navItem.label}
+
+      //— static “Schedule a visit” button
       li
         a(
-          href="#"
-          class=" inline-flex items-center rounded-full overflow-hidden bg-black text-white "
-          style="background-color: black !important; color: white !important; padding-right: 1rem; display: flex; gap:10px"
+          href="#",
+          class="inline-flex items-center rounded-full bg-black text-white overflow-hidden px-4"
+        )
+          i.fa.fa-calendar.mr-1(
+            style="background-color:#F35525;color:white;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;"
           )
-          i.fa.fa-calendar.mr-1( style="background-color: #F35525 !important; color: white !important; display:flex; justify-content: center; align-items: center; width:40px; height:40px; border-radius: 50%;")
           | Schedule a visit

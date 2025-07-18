@@ -1,35 +1,74 @@
-//- components/sections/bestDeal.pug
-
 .section.py-20
   .container.mx-auto
-    h2.text-3xl.font-bold.mb-8.text-center Find Your Best Deal Right Now!
+    h3(class="text-2xl font-semibold mb-4 text-[#ee626b]") BEST DEAL
+    h2(class="text-3xl font-bold mb-8 text-center") Find Your Best Deal Right Now!
 
     //- Tabs
-    ul.flex.flex-wrap.justify-center.space-x-4.mb-8
-      each tab, i in ['Apartment', 'Villa House', 'Penthouse']
+    ul.flex.flex-wrap.justify-end.space-x-4.mb-8
+      each tab, i in bestDealTabs
         li
-          button(
-            class=(i === 0 ? 'bg-orange-500 text-white' : 'bg-gray-200 text-gray-800') + ' px-4 py-2 rounded hover:bg-orange-500 hover:text-white transition'
-          ) #{tab}
+          button.deal-tab-btn(
+            type="button",
+            class=(i === 0 
+              ? 'bg-orange-500 text-white' 
+              : 'bg-black text-white'
+            ) + ' px-4 py-2 rounded hover:bg-orange-500 hover:text-white transition',
+            data-index=i
+          )= tab
 
-    //- Deal Content
-    div(class="grid md:grid-cols-3 gap-8")
-      //- Deal Info
-      ul.space-y-2
-        li.text-gray-600 Total Flat Space: 185 m2
-        li.text-gray-600 Floor Number: 26th
-        li.text-gray-600 Rooms: 4
-        li.text-gray-600 Parking Available: Yes
-        li.text-gray-600 Payment Process: Bank
+    //- Content Grid
+    .grid(class="md:grid-cols-3 gap-8")
+      //- Info List placeholder
+      ul#deal-info.text-gray-600.mt-2.space-y-4
 
-      //- Deal Image
-      img(src="/assets/images/deal-01.jpg", alt="Best Deal", class="rounded shadow-md")
+      //- Image placeholder
+      img#deal-image.rounded.shadow-md(src="", alt="")
 
-      //- Deal Description
+      //- Description + CTA
       .flex.flex-col.justify-between
-        p.text-gray-600
-          | Discover this premium property with modern design, spacious rooms, and great amenities for comfortable living.
+        p#deal-desc.text-gray-600
         a(
-          href="#", class=" inline-flex items-center rounded-full bg-black text-white width-full", style="display: flex; align-items: center; width:220px;")
-          i.fa.fa-calendar.mr-1( style="background-color: #F35525 !important; color: white !important; display:flex; justify-content: center; align-items: center; width:40px; height:40px; border-radius: 50%;")
+          class="inline-flex items-center rounded-full bg-black text-white w-[220px] py-3 px-6 mt-4",
+          href="#"
+        )
+          i.fa.fa-calendar.mr-2.text-white.bg-orange-500.p-2.rounded-full
           | Schedule a visit
+
+    script.
+      // bảng dữ liệu bạn đã định nghĩa trong globals.pug
+      const dealsData = !{JSON.stringify(bestDeals)};
+      const tabs       = Array.from(document.querySelectorAll('.deal-tab-btn'));
+      const infoEl     = document.getElementById('deal-info');
+      const imgEl      = document.getElementById('deal-image');
+      const descEl     = document.getElementById('deal-desc');
+      const imgBase    = '/assets/images/';  // nếu muốn dễ thay đổi folder sau này
+
+      function renderDeal(idx) {
+        const d = dealsData[idx];
+
+        // 1) active class toggle
+        tabs.forEach((btn, i) => {
+          btn.classList.toggle('bg-orange-500', i === idx);
+          btn.classList.toggle('bg-black',        i !== idx);
+        });
+
+        // 2) render danh sách info
+        infoEl.innerHTML = `
+          <li class="flex justify-between"><span>Total Flat Space:</span><strong>${d.area}</strong></li>
+          <li class="flex justify-between"><span>Floor number:</span><strong>${d.floor}</strong></li>
+          <li class="flex justify-between"><span>Number of rooms:</span><strong>${d.rooms}</strong></li>
+          <li class="flex justify-between"><span>Parking Available:</span><strong>${d.parking}</strong></li>
+          <li class="flex justify-between"><span>Payment Process:</span><strong>${d.payment}</strong></li>
+        `;
+
+        // 3) đổi ảnh & alt
+        imgEl.src = imgBase + d.img;
+        imgEl.alt = d.type;
+
+        // 4) đổi phần mô tả
+        descEl.textContent = d.description;
+      }
+
+      // 5) gắn sự kiện & render lần đầu
+      tabs.forEach((btn, i) => btn.addEventListener('click', () => renderDeal(i)));
+      renderDeal(0);
