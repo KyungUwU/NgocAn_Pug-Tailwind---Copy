@@ -1,24 +1,34 @@
-<!DOCTYPE html>
+
+<!-- File: src/views/layout.pug-->
+<!--— chỉ include globals & icon mixin 1 lần duy nhất-->
+<!-- Navigation-->
+<!-- Mixin Font Awesome Solid Icon-->
+<!-- Mixin Font Awesome Brand Icon--><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Villa Agency - Real Estate Tailwind</title>
+    <title>Villa Agency – Real Estate Tailwind
+    </title>
+    <!--– Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap">
-    <link rel="stylesheet" href="tailwind.css">
+    <!--– Tailwind-->
+    <link rel="stylesheet" href="/tailwind.css">
+    <!--– Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!--– Swiper-->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <!--– Favicon-->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
   </head>
   <body class="font-['Poppins'] bg-white text-gray-800">
-    <!-- Navigation-->
-    <!-- Mixin Font Awesome Solid Icon-->
-    <!-- Mixin Font Awesome Brand Icon-->
+    <!--– Preloader-->
     <div class="js-preloader fixed inset-0 bg-white z-50 flex items-center justify-center" id="js-preloader">
       <div class="preloader-inner flex flex-col items-center"><span class="dot w-4 h-4 bg-orange-500 rounded-full mb-2"></span>
         <div class="dots flex space-x-1"><span class="w-2 h-2 bg-orange-500 rounded-full animate-bounce"></span><span class="w-2 h-2 bg-orange-500 rounded-full animate-bounce"></span><span class="w-2 h-2 bg-orange-500 rounded-full animate-bounce"></span></div>
       </div>
     </div>
+    <!--– Sub‑header-->
     <div class="bg-gray-100 py-2">
       <div class="container mx-auto flex flex-wrap justify-between items-center text-sm text-gray-600">
         <div class="flex space-x-4">
@@ -33,374 +43,442 @@
         </ul>
       </div>
     </div>
+    <!--– cho phép page set activePage trước khi render header-->
+    <!--– Main header/nav-->
+    <!-- src/components/layouts/header.pug-->
     <header class="sticky top-0 bg-white shadow z-50">
-      <div class="container mx-auto px-4 py-4 flex justify-between items-center"><a class="text-2xl font-bold text-black-500" href="index.html">VILLA</a>
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center"><a class="text-2xl font-bold text-black" href="/">VILLA</a>
         <ul class="flex space-x-6 items-center">
           <li><a class="text-orange-500 font-semibold" href="index.html">Home</a></li>
           <li><a class="hover:text-orange-500" href="properties.html">Properties</a></li>
           <li><a class="hover:text-orange-500" href="properties-details.html">Property Details</a></li>
           <li><a class="hover:text-orange-500" href="contact.html">Contact Us</a></li>
-          <li><a class=" inline-flex items-center rounded-full overflow-hidden bg-black text-white " href="#" style="background-color: black !important; color: white !important; padding-right: 1rem; display: flex; gap:10px"><i class="fa fa-calendar mr-1" style="background-color: #F35525 !important; color: white !important; display:flex; justify-content: center; align-items: center; width:40px; height:40px; border-radius: 50%;"></i>Schedule a visit</a></li>
+          <li><a class="inline-flex items-center rounded-full bg-black text-white overflow-hidden px-4" href="#"><i class="fa fa-calendar mr-1" style="background-color:#F35525;color:white;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;"></i>Schedule a visit</a></li>
         </ul>
       </div>
     </header>
-    <div class="relative"></div>
-    <div class="swiper relative">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide bg-cover bg-center relative text-black font-sans" style="background-image: url('assets/images/banner-01.jpg')">
-          <div class="relative z-10 flex items-center justify-start w-full h-full">
-            <div class="pt-[-300px] pb-[320px] w-full pl-[200px]">
-              <div class="px-[293px] flex flex-col justify-center h-[600px] w-full pl-[200px]">
-                <div class="flex flex-col items-start"><span class="category bg-white text-[#1e1e1e] text-base font-medium capitalize py-[6px] px-[15px] mb-[30px]" style="background-color:#fff !important; color:#1e1e1e !important;">Toronto, <em class="text-orange-400 font-semibold">&nbsp;Canada</em></span>
-                  <h2 class=" text-[62px] font-bold uppercase text-white leading-[72px] w-1/2 mb-0">Hurry!<br>Get the Best Villa for you
-                  </h2>
+    <!--– Đây là chỗ các page đổ nội dung riêng của họ-->
+    <main>
+      <div class="relative"></div>
+      <div class="swiper relative">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide bg-cover bg-center relative text-black font-sans" style="background-image: url('assets/images/banner-01.jpg')">
+            <div class="relative z-10 flex items-center justify-start w-full h-full">
+              <div class="pt-[-300px] pb-[320px] w-full pl-[200px]">
+                <div class="px-[293px] flex flex-col justify-center h-[600px] w-full pl-[200px]">
+                  <div class="flex flex-col items-start"><span class="category bg-white text-[#1e1e1e] text-base font-medium capitalize py-[6px] px-[15px] mb-[30px]" style="background-color:#fff !important; color:#1e1e1e !important;">Toronto, <em class="text-orange-400 font-semibold">&nbsp;Canada</em></span>
+                    <h2 class=" text-[62px] font-bold uppercase text-white leading-[72px] w-1/2 mb-0">Hurry!<br>Get the Best Villa for you
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide bg-cover bg-center relative text-black font-sans" style="background-image: url('assets/images/banner-02.jpg')">
+            <div class="relative z-10 flex items-center justify-start w-full h-full">
+              <div class="pt-[-300px] pb-[320px] w-full pl-[200px]">
+                <div class="px-[293px] flex flex-col justify-center h-[600px] w-full pl-[200px]">
+                  <div class="flex flex-col items-start"><span class="category bg-white text-[#1e1e1e] text-base font-medium capitalize py-[6px] px-[15px] mb-[30px]" style="background-color:#fff !important; color:#1e1e1e !important;">Melbourne, <em class="text-orange-400 font-semibold">&nbsp;Australia</em></span>
+                    <h2 class=" text-[62px] font-bold uppercase text-white leading-[72px] w-1/2 mb-0">Be Quick!<br>Get the best villa in town
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide bg-cover bg-center relative text-black font-sans" style="background-image: url('assets/images/banner-03.jpg')">
+            <div class="relative z-10 flex items-center justify-start w-full h-full">
+              <div class="pt-[-300px] pb-[320px] w-full pl-[200px]">
+                <div class="px-[293px] flex flex-col justify-center h-[600px] w-full pl-[200px]">
+                  <div class="flex flex-col items-start"><span class="category bg-white text-[#1e1e1e] text-base font-medium capitalize py-[6px] px-[15px] mb-[30px]" style="background-color:#fff !important; color:#1e1e1e !important;">Miami, <em class="text-orange-400 font-semibold">&nbsp;South Florida</em></span>
+                    <h2 class=" text-[62px] font-bold uppercase text-white leading-[72px] w-1/2 mb-0">Act Now!<br>Get the highest level penthouse
+                    </h2>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="swiper-slide bg-cover bg-center relative text-black font-sans" style="background-image: url('assets/images/banner-02.jpg')">
-          <div class="relative z-10 flex items-center justify-start w-full h-full">
-            <div class="pt-[-300px] pb-[320px] w-full pl-[200px]">
-              <div class="px-[293px] flex flex-col justify-center h-[600px] w-full pl-[200px]">
-                <div class="flex flex-col items-start"><span class="category bg-white text-[#1e1e1e] text-base font-medium capitalize py-[6px] px-[15px] mb-[30px]" style="background-color:#fff !important; color:#1e1e1e !important;">Melbourne, <em class="text-orange-400 font-semibold">&nbsp;Australia</em></span>
-                  <h2 class=" text-[62px] font-bold uppercase text-white leading-[72px] w-1/2 mb-0">Be Quick!<br>Get the best villa in town
-                  </h2>
-                </div>
-              </div>
+        <div class="swiper-pagination"></div>
+        <!-- Arrows-->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <!-- file: src/components/sections/featuredSection.pug-->
+      <div class="py-20">
+        <div class="container mx-auto grid md:grid-cols-3 gap-8">
+          <!-- Column 1 – Image-->
+          <div class="relative">         
+            <!--–– Wrapper chỉ cho chính ảnh, bo tròn & clip-->
+            <div class="overflow-hidden rounded-lg shadow"><img class="block w-full" src="/assets/images/featured.jpg" alt="Featured"></div>
+            <!--–– Icon overlay: nằm ngay sát trong khung .relative--><a class="absolute z-20 w-24 h-24 w-30 h-30 oval flex justify-center" href="properties-details.html" style="bottom: -15px; left: -50px; border-radius: 50%; padding:20px; background-color:#f35525"><img src="/assets/images/featured-icon.png" alt="Icon"></a>
+          </div>
+          <!-- Column 2 – FAQ Buttons with Toggle-->
+          <div class="space-y-4">
+            <h3 class="text-xl text-orange-500 font-semibold mb-4">Featured</h3>
+            <h2 class="text-2xl font-bold mb-4">Best Apartment & Sea View</h2>
+            <!-- Button to toggle answer-->
+            <button class="faq-btn w-full text-left flex justify-between items-center p-4 border border-gray-200 rounded font-medium" type="button" aria-expanded="false" aria-controls="faq0"><span>Best useful links?</span><i class="lucide-chevron-down transition-transform duration-200"></i></button>
+            <!-- Answer panel, hidden by default-->
+            <div class="faq-content mt-2 p-4 border-t border-gray-200 text-gray-600 hidden" id="faq0">Get <strong>the best villa</strong> website template in HTML CSS and Bootstrap for your business. TemplateMo provides you the <a class="text-blue-500 hover:text-blue-700">best free CSS templates</a> in the world. Please tell your friends about it.
+            </div>
+            <!-- Button to toggle answer-->
+            <button class="faq-btn w-full text-left flex justify-between items-center p-4 border border-gray-200 rounded font-medium" type="button" aria-expanded="false" aria-controls="faq1"><span>How does this work?</span><i class="lucide-chevron-down transition-transform duration-200"></i></button>
+            <!-- Answer panel, hidden by default-->
+            <div class="faq-content mt-2 p-4 border-t border-gray-200 text-gray-600 hidden" id="faq1">Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <a class="text-pink-500">adipiscing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+            <!-- Button to toggle answer-->
+            <button class="faq-btn w-full text-left flex justify-between items-center p-4 border border-gray-200 rounded font-medium" type="button" aria-expanded="false" aria-controls="faq2"><span>Why is Villa Agency the best?</span><i class="lucide-chevron-down transition-transform duration-200"></i></button>
+            <!-- Answer panel, hidden by default-->
+            <div class="faq-content mt-2 p-4 border-t border-gray-200 text-gray-600 hidden" id="faq2">Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <a class="text-pink-500">adipiscing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </div>
           </div>
-        </div>
-        <div class="swiper-slide bg-cover bg-center relative text-black font-sans" style="background-image: url('assets/images/banner-03.jpg')">
-          <div class="relative z-10 flex items-center justify-start w-full h-full">
-            <div class="pt-[-300px] pb-[320px] w-full pl-[200px]">
-              <div class="px-[293px] flex flex-col justify-center h-[600px] w-full pl-[200px]">
-                <div class="flex flex-col items-start"><span class="category bg-white text-[#1e1e1e] text-base font-medium capitalize py-[6px] px-[15px] mb-[30px]" style="background-color:#fff !important; color:#1e1e1e !important;">Miami, <em class="text-orange-400 font-semibold">&nbsp;South Florida</em></span>
-                  <h2 class=" text-[62px] font-bold uppercase text-white leading-[72px] w-1/2 mb-0">Act Now!<br>Get the highest level penthouse
-                  </h2>
+          <!-- Column 3 – Info Items-->
+          <div class="bg-white ">
+            <ul class="divide-y divide-gray-200; border border-gray-200; rounded-lg; rounded-[10px]; shadow-[0_0_15px_rgba(0,0,0,0.15)]; px-[30px] py-[35px]">
+              <li class="flex items-center gap-4 p-6"><img class="w-12 h-12" src="assets/images/info-icon-01.png" alt="250 m2">
+                <div>
+                  <h4 class="font-semibold text-lg">250 m2</h4>
+                  <p class="text-sm text-gray-500">Total Flat Space</p>
                 </div>
-              </div>
-            </div>
+              </li>
+              <li class="flex items-center gap-4 p-6"><img class="w-12 h-12" src="assets/images/info-icon-02.png" alt="Contract">
+                <div>
+                  <h4 class="font-semibold text-lg">Contract</h4>
+                  <p class="text-sm text-gray-500">Contract Ready</p>
+                </div>
+              </li>
+              <li class="flex items-center gap-4 p-6"><img class="w-12 h-12" src="assets/images/info-icon-03.png" alt="Payment">
+                <div>
+                  <h4 class="font-semibold text-lg">Payment</h4>
+                  <p class="text-sm text-gray-500">Payment Process</p>
+                </div>
+              </li>
+              <li class="flex items-center gap-4 p-6"><img class="w-12 h-12" src="assets/images/info-icon-04.png" alt="Safety">
+                <div>
+                  <h4 class="font-semibold text-lg">Safety</h4>
+                  <p class="text-sm text-gray-500">24/7 Under Control</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="swiper-pagination"></div>
-      <!-- Arrows-->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-    <!-- file: src/components/sections/featuredSection.pug-->
-    <div class="py-20">
-      <div class="container mx-auto grid md:grid-cols-3 gap-8">
-        <!-- Column 1 – Image-->
-        <div class="relative">         
-          <!--–– Wrapper chỉ cho chính ảnh, bo tròn & clip-->
-          <div class="overflow-hidden rounded-lg shadow"><img class="block w-full" src="/assets/images/featured.jpg" alt="Featured"></div>
-          <!--–– Icon overlay: nằm ngay sát trong khung .relative--><a class="absolute z-20 w-24 h-24 w-30 h-30 oval flex justify-center" href="properties-details.html" style="bottom: -15px; left: -50px; border-radius: 50%; padding:20px; background-color:#f35525"><img src="/assets/images/featured-icon.png" alt="Icon"></a>
-        </div>
-        <!-- Column 2 – FAQ Buttons with Toggle-->
-        <div class="space-y-4">
-          <h3 class="text-xl text-orange-500 font-semibold mb-4">Featured</h3>
-          <h2 class="text-2xl font-bold mb-4">Best Apartment & Sea View</h2>
-          <!-- Button to toggle answer-->
-          <button class="faq-btn w-full text-left flex justify-between items-center p-4 border border-gray-200 rounded font-medium" type="button" aria-expanded="false" aria-controls="faq0"><span>Best useful links?</span><i class="lucide-chevron-down transition-transform duration-200"></i></button>
-          <!-- Answer panel, hidden by default-->
-          <div class="faq-content mt-2 p-4 border-t border-gray-200 text-gray-600 hidden" id="faq0">Get <strong>the best villa</strong> website template in HTML CSS and Bootstrap for your business. TemplateMo provides you the <a class="text-blue-500 hover:text-blue-700">best free CSS templates</a> in the world. Please tell your friends about it.
-          </div>
-          <!-- Button to toggle answer-->
-          <button class="faq-btn w-full text-left flex justify-between items-center p-4 border border-gray-200 rounded font-medium" type="button" aria-expanded="false" aria-controls="faq1"><span>How does this work?</span><i class="lucide-chevron-down transition-transform duration-200"></i></button>
-          <!-- Answer panel, hidden by default-->
-          <div class="faq-content mt-2 p-4 border-t border-gray-200 text-gray-600 hidden" id="faq1">Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <a class="text-pink-500">adipiscing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </div>
-          <!-- Button to toggle answer-->
-          <button class="faq-btn w-full text-left flex justify-between items-center p-4 border border-gray-200 rounded font-medium" type="button" aria-expanded="false" aria-controls="faq2"><span>Why is Villa Agency the best?</span><i class="lucide-chevron-down transition-transform duration-200"></i></button>
-          <!-- Answer panel, hidden by default-->
-          <div class="faq-content mt-2 p-4 border-t border-gray-200 text-gray-600 hidden" id="faq2">Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <a class="text-pink-500">adipiscing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </div>
-        </div>
-        <!-- Column 3 – Info Items-->
-        <div class="bg-white ">
-          <ul class="divide-y divide-gray-200; border border-gray-200; rounded-lg; rounded-[10px]; shadow-[0_0_15px_rgba(0,0,0,0.15)]; px-[30px] py-[35px]">
-            <li class="flex items-center gap-4 p-6"><img class="w-12 h-12" src="assets/images/info-icon-01.png" alt="250 m2">
-              <div>
-                <h4 class="font-semibold text-lg">250 m2</h4>
-                <p class="text-sm text-gray-500">Total Flat Space</p>
-              </div>
-            </li>
-            <li class="flex items-center gap-4 p-6"><img class="w-12 h-12" src="assets/images/info-icon-02.png" alt="Contract">
-              <div>
-                <h4 class="font-semibold text-lg">Contract</h4>
-                <p class="text-sm text-gray-500">Contract Ready</p>
-              </div>
-            </li>
-            <li class="flex items-center gap-4 p-6"><img class="w-12 h-12" src="assets/images/info-icon-03.png" alt="Payment">
-              <div>
-                <h4 class="font-semibold text-lg">Payment</h4>
-                <p class="text-sm text-gray-500">Payment Process</p>
-              </div>
-            </li>
-            <li class="flex items-center gap-4 p-6"><img class="w-12 h-12" src="assets/images/info-icon-04.png" alt="Safety">
-              <div>
-                <h4 class="font-semibold text-lg">Safety</h4>
-                <p class="text-sm text-gray-500">24/7 Under Control</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- Inline script to wire up the toggle behavior-->
-    <script>
-      const buttons = Array.from(document.querySelectorAll('.faq-btn'));
-      const panels  = buttons.map(b => document.getElementById(b.getAttribute('aria-controls')));
-      
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          // 1. Close all other panels
-          buttons.forEach(other => {
-            if (other !== btn) {
-              other.setAttribute('aria-expanded', 'false');
-              panels.find(p => p.id === other.getAttribute('aria-controls')).classList.add('hidden');
-              other.querySelector('i').classList.remove('rotate-180');
-              other.classList.remove('text-orange-500');
-              other.classList.add('text-black');
+      <!-- Inline script to wire up the toggle behavior-->
+      <script>
+        const buttons = Array.from(document.querySelectorAll('.faq-btn'));
+        const panels  = buttons.map(b => document.getElementById(b.getAttribute('aria-controls')));
+        
+        buttons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            // 1. Close all other panels
+            buttons.forEach(other => {
+              if (other !== btn) {
+                other.setAttribute('aria-expanded', 'false');
+                panels.find(p => p.id === other.getAttribute('aria-controls')).classList.add('hidden');
+                other.querySelector('i').classList.remove('rotate-180');
+                other.classList.remove('text-orange-500');
+                other.classList.add('text-black');
+              }
+            });
+        
+            // 2. Toggle this one
+            const id = btn.getAttribute('aria-controls');
+            const panel = document.getElementById(id);
+            const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        
+            btn.setAttribute('aria-expanded', String(!isOpen));
+            panel.classList.toggle('hidden');
+            btn.querySelector('i').classList.toggle('rotate-180');
+        
+            // 3. Highlight active button
+            if (!isOpen) {
+              btn.classList.remove('text-black');
+              btn.classList.add('text-orange-500');
+            } else {
+              btn.classList.remove('text-orange-500');
+              btn.classList.add('text-black');
             }
           });
-      
-          // 2. Toggle this one
-          const id = btn.getAttribute('aria-controls');
-          const panel = document.getElementById(id);
-          const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      
-          btn.setAttribute('aria-expanded', String(!isOpen));
-          panel.classList.toggle('hidden');
-          btn.querySelector('i').classList.toggle('rotate-180');
-      
-          // 3. Highlight active button
-          if (!isOpen) {
-            btn.classList.remove('text-black');
-            btn.classList.add('text-orange-500');
-          } else {
-            btn.classList.remove('text-orange-500');
-            btn.classList.add('text-black');
-          }
         });
-      });
-    </script>
-    <div class="video section py-20 relative" style="background-image: url('/assets/images/video-bg.jpg');min-height: 550px; background-size: cover; background-position: center; margin-bottom: 400px">
-      <div class="container mx-auto">
-        <div class="text-center max-w-2xl mx-auto">
-          <h6 class="text-orange-600 font-semibold mb-2">| Video View</h6>
-          <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">Get Closer View & Different Feeling</h2>
-        </div>
-      </div>
-      <div class="video-content absolute" style="width:1200px; height: 400px; bottom: 0; left: 50%; transform: translate(-50%, 50%);">
+      </script>
+      <div class="video section py-20 relative" style="background-image: url('/assets/images/video-bg.jpg');min-height: 550px; background-size: cover; background-position: center; margin-bottom: 400px">
         <div class="container mx-auto">
-          <div class="flex justify-center">
-            <div class="relative"><img class="rounded shadow-lg" src="/assets/images/video-frame.jpg" alt="Video Frame"><a class="absolute inset-0 flex items-center justify-center" href="https://youtube.com" target="_blank"><i class="fa fa-play text-white text-4xl bg-orange-600 p-4 rounded-full hover:scale-110 transition"></i></a></div>
+          <div class="text-center max-w-2xl mx-auto">
+            <h6 class="text-orange-600 font-semibold mb-2">| Video View</h6>
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">Get Closer View & Different Feeling</h2>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="section bg-white py-12">
-      <div class="container mx-auto">
-        <div class="grid md:grid-cols-3 gap-8 text-center">
-          <div class="relative bg-orange-50 p-6 rounded-lg">
-            <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
-              <div class="w-6 h-6 bg-orange-500 rounded-full" style="position:absolute;width:50px;height:50px;background-color:#f35525;border-radius:50%;right:-25px;top:-25px;"></div>
+        <div class="video-content absolute" style="width:1200px; height: 400px; bottom: 0; left: 50%; transform: translate(-50%, 50%);">
+          <div class="container mx-auto">
+            <div class="flex justify-center">
+              <div class="relative"><img class="rounded shadow-lg" src="/assets/images/video-frame.jpg" alt="Video Frame"><a class="absolute inset-0 flex items-center justify-center" href="https://youtube.com" target="_blank"><i class="fa fa-play text-white text-4xl bg-orange-600 p-4 rounded-full hover:scale-110 transition"></i></a></div>
             </div>
-            <!-- Số-->
-            <h2 class="text-4xl font-bold text-orange-500">34</h2>
-            <!-- Nhãn-->
-            <p class="mt-2 text-gray-700">Buildings Finished Now</p>
           </div>
-          <div class="relative bg-orange-50 p-6 rounded-lg">
-            <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
-              <div class="w-6 h-6 bg-orange-500 rounded-full" style="position:absolute;width:50px;height:50px;background-color:#f35525;border-radius:50%;right:-25px;top:-25px;"></div>
+        </div>
+      </div>
+      <div class="section bg-white py-12">
+        <div class="container mx-auto">
+          <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="relative bg-orange-50 p-6 rounded-lg">
+              <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
+                <div class="w-6 h-6 bg-orange-500 rounded-full" style="position:absolute;width:50px;height:50px;background-color:#f35525;border-radius:50%;right:-25px;top:-25px;"></div>
+              </div>
+              <!-- Số-->
+              <h2 class="text-4xl font-bold text-orange-500">34</h2>
+              <!-- Nhãn-->
+              <p class="mt-2 text-gray-700">Buildings Finished Now</p>
             </div>
-            <!-- Số-->
-            <h2 class="text-4xl font-bold text-orange-500">12</h2>
-            <!-- Nhãn-->
-            <p class="mt-2 text-gray-700">Years Experience</p>
-          </div>
-          <div class="relative bg-orange-50 p-6 rounded-lg">
-            <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
-              <div class="w-6 h-6 bg-orange-500 rounded-full" style="position:absolute;width:50px;height:50px;background-color:#f35525;border-radius:50%;right:-25px;top:-25px;"></div>
+            <div class="relative bg-orange-50 p-6 rounded-lg">
+              <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
+                <div class="w-6 h-6 bg-orange-500 rounded-full" style="position:absolute;width:50px;height:50px;background-color:#f35525;border-radius:50%;right:-25px;top:-25px;"></div>
+              </div>
+              <!-- Số-->
+              <h2 class="text-4xl font-bold text-orange-500">12</h2>
+              <!-- Nhãn-->
+              <p class="mt-2 text-gray-700">Years Experience</p>
             </div>
-            <!-- Số-->
-            <h2 class="text-4xl font-bold text-orange-500">24</h2>
-            <!-- Nhãn-->
-            <p class="mt-2 text-gray-700">Awards Won 2023</p>
+            <div class="relative bg-orange-50 p-6 rounded-lg">
+              <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
+                <div class="w-6 h-6 bg-orange-500 rounded-full" style="position:absolute;width:50px;height:50px;background-color:#f35525;border-radius:50%;right:-25px;top:-25px;"></div>
+              </div>
+              <!-- Số-->
+              <h2 class="text-4xl font-bold text-orange-500">24</h2>
+              <!-- Nhãn-->
+              <p class="mt-2 text-gray-700">Awards Won 2023</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Properties Grid-->
-    <div class="py-20 bg-gray-50">
-      <div class="container mx-auto">
-        <h6 class="text-3x1 font-bold" style="text-align: center; margin-bottom: 20px;color: #EE626B;">| Properties</h6>
-        <h2 class="text-2xl font-bold mb-8 justify-center flex">We Provide The Best Property You Like</h2>
-      </div>
-      <div class="container mx-auto grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-01.jpg" alt="Luxury Villa">
-          <div class="flex items-center"><span style="background-color: #fbd9cf; color: #1e1e1e; padding: 5px 12px; border-radius: 5px; margin-top: 25px;">Luxury Villa</span>
-            <h6 class="font-bold mt-2" style="color:#f35525; padding-left:150px">$2,264,000</h6>
+      <div class="section py-20">
+        <div class="container mx-auto">
+          <h3 class="text-2xl font-semibold mb-4 text-[#ee626b]">BEST DEAL</h3>
+          <h2 class="text-3xl font-bold mb-8 text-center">Find Your Best Deal Right Now!</h2>
+          <ul class="flex flex-wrap justify-end space-x-4 mb-8">
+            <li>
+              <button class="deal-tab-btn bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-500 hover:text-white transition" type="button" data-index="0">Show All</button>
+            </li>
+            <li>
+              <button class="deal-tab-btn bg-black text-white px-4 py-2 rounded hover:bg-orange-500 hover:text-white transition" type="button" data-index="1">Apartment</button>
+            </li>
+            <li>
+              <button class="deal-tab-btn bg-black text-white px-4 py-2 rounded hover:bg-orange-500 hover:text-white transition" type="button" data-index="2">Villa House</button>
+            </li>
+            <li>
+              <button class="deal-tab-btn bg-black text-white px-4 py-2 rounded hover:bg-orange-500 hover:text-white transition" type="button" data-index="3">Penthouse</button>
+            </li>
+          </ul>
+          <div class="grid md:grid-cols-3 gap-8">
+            <ul class="text-gray-600 mt-2 space-y-4" id="deal-info"></ul><img class="rounded shadow-md" id="deal-image" src="" alt="">
+            <div class="flex flex-col justify-between">
+              <p class="text-gray-600" id="deal-desc"></p><a class="inline-flex items-center rounded-full bg-black text-white w-[220px] py-3 px-6 mt-4" href="#"><i class="fa fa-calendar mr-2 text-white bg-orange-500 p-2 rounded-full"></i>Schedule a visit</a>
+            </div>
           </div>
-          <h4 class="font-bold text-lg mt-1">18 New Street Miami, OR 97219</h4>
-          <ul class="space-x-4 text-1xl text-gray-600 mt-2 flex flex-wrap gap-x-8 gap-y-8">
-            <li>Bedrooms: <strong>8</strong></li>
-            <li>Bathrooms: <strong>8</strong></li>
-            <li>Area: <strong>545 m2</strong></li>
-            <li>Floor: <strong>3</strong></li>
-            <li>Parking: <strong>6 spots</strong></li>
-          </ul><a class="mt-4 bg-black text-white inline-flex items-center rounded-full width-full mx-auto" href="properties-details.html" style="width: 170px; padding: 10px; display: flex; justify-content: center; align-items: center;">Schedule a visit</a>
-        </div>
-        <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-02.jpg" alt="Luxury Villa">
-          <div class="flex items-center"><span style="background-color: #fbd9cf; color: #1e1e1e; padding: 5px 12px; border-radius: 5px; margin-top: 25px;">Luxury Villa</span>
-            <h6 class="font-bold mt-2" style="color:#f35525; padding-left:150px">$1,180,000</h6>
-          </div>
-          <h4 class="font-bold text-lg mt-1">54 Mid Street Florida, OR 27001</h4>
-          <ul class="space-x-4 text-1xl text-gray-600 mt-2 flex flex-wrap gap-x-8 gap-y-8">
-            <li>Bedrooms: <strong>6</strong></li>
-            <li>Bathrooms: <strong>5</strong></li>
-            <li>Area: <strong>450 m2</strong></li>
-            <li>Floor: <strong>3</strong></li>
-            <li>Parking: <strong>8 spots</strong></li>
-          </ul><a class="mt-4 bg-black text-white inline-flex items-center rounded-full width-full mx-auto" href="properties-details.html" style="width: 170px; padding: 10px; display: flex; justify-content: center; align-items: center;">Schedule a visit</a>
-        </div>
-        <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-03.jpg" alt="Luxury Villa">
-          <div class="flex items-center"><span style="background-color: #fbd9cf; color: #1e1e1e; padding: 5px 12px; border-radius: 5px; margin-top: 25px;">Luxury Villa</span>
-            <h6 class="font-bold mt-2" style="color:#f35525; padding-left:150px">$1,460,000</h6>
-          </div>
-          <h4 class="font-bold text-lg mt-1">26 Old Street Miami, OR 38540</h4>
-          <ul class="space-x-4 text-1xl text-gray-600 mt-2 flex flex-wrap gap-x-8 gap-y-8">
-            <li>Bedrooms: <strong>5</strong></li>
-            <li>Bathrooms: <strong>4</strong></li>
-            <li>Area: <strong>225 m2</strong></li>
-            <li>Floor: <strong>3</strong></li>
-            <li>Parking: <strong>10 spots</strong></li>
-          </ul><a class="mt-4 bg-black text-white inline-flex items-center rounded-full width-full mx-auto" href="properties-details.html" style="width: 170px; padding: 10px; display: flex; justify-content: center; align-items: center;">Schedule a visit</a>
-        </div>
-        <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-04.jpg" alt="Apartment">
-          <div class="flex items-center"><span style="background-color: #fbd9cf; color: #1e1e1e; padding: 5px 12px; border-radius: 5px; margin-top: 25px;">Apartment</span>
-            <h6 class="font-bold mt-2" style="color:#f35525; padding-left:150px">$584,500</h6>
-          </div>
-          <h4 class="font-bold text-lg mt-1">12 New Street Miami, OR 12650</h4>
-          <ul class="space-x-4 text-1xl text-gray-600 mt-2 flex flex-wrap gap-x-8 gap-y-8">
-            <li>Bedrooms: <strong>4</strong></li>
-            <li>Bathrooms: <strong>3</strong></li>
-            <li>Area: <strong>125 m2</strong></li>
-            <li>Floor: <strong>25th</strong></li>
-            <li>Parking: <strong>2 cars</strong></li>
-          </ul><a class="mt-4 bg-black text-white inline-flex items-center rounded-full width-full mx-auto" href="properties-details.html" style="width: 170px; padding: 10px; display: flex; justify-content: center; align-items: center;">Schedule a visit</a>
-        </div>
-        <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-05.jpg" alt="Penthouse">
-          <div class="flex items-center"><span style="background-color: #fbd9cf; color: #1e1e1e; padding: 5px 12px; border-radius: 5px; margin-top: 25px;">Penthouse</span>
-            <h6 class="font-bold mt-2" style="color:#f35525; padding-left:150px">$925,600</h6>
-          </div>
-          <h4 class="font-bold text-lg mt-1">34 Beach Street Miami, OR 42680</h4>
-          <ul class="space-x-4 text-1xl text-gray-600 mt-2 flex flex-wrap gap-x-8 gap-y-8">
-            <li>Bedrooms: <strong>4</strong></li>
-            <li>Bathrooms: <strong>4</strong></li>
-            <li>Area: <strong>180 m2</strong></li>
-            <li>Floor: <strong>38th</strong></li>
-            <li>Parking: <strong>2 cars</strong></li>
-          </ul><a class="mt-4 bg-black text-white inline-flex items-center rounded-full width-full mx-auto" href="properties-details.html" style="width: 170px; padding: 10px; display: flex; justify-content: center; align-items: center;">Schedule a visit</a>
-        </div>
-        <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-06.jpg" alt="Modern Condo">
-          <div class="flex items-center"><span style="background-color: #fbd9cf; color: #1e1e1e; padding: 5px 12px; border-radius: 5px; margin-top: 25px;">Modern Condo</span>
-            <h6 class="font-bold mt-2" style="color:#f35525; padding-left:150px">$450,000</h6>
-          </div>
-          <h4 class="font-bold text-lg mt-1">22 New Street Portland, OR 16540</h4>
-          <ul class="space-x-4 text-1xl text-gray-600 mt-2 flex flex-wrap gap-x-8 gap-y-8">
-            <li>Bedrooms: <strong>3</strong></li>
-            <li>Bathrooms: <strong>2</strong></li>
-            <li>Area: <strong>165 m2</strong></li>
-            <li>Floor: <strong>26th</strong></li>
-            <li>Parking: <strong>3 cars</strong></li>
-          </ul><a class="mt-4 bg-black text-white inline-flex items-center rounded-full width-full mx-auto" href="properties-details.html" style="width: 170px; padding: 10px; display: flex; justify-content: center; align-items: center;">Schedule a visit</a>
+          <script>
+            // bảng dữ liệu bạn đã định nghĩa trong globals.pug
+            const dealsData = [{"type":"Apartment","area":"185 m2","floor":"26th","rooms":"4","parking":"Yes","payment":"Bank","img":"deal-01.jpg","description":"Discover this premium property with modern design, spacious rooms, and great amenities for comfortable living."},{"type":"Villa House","area":"320 m2","floor":"34th","rooms":"6","parking":"Yes","payment":"Bank","img":"deal-02.jpg","description":"Experience luxury villa living with beautiful views, private pool, and high-end finishes throughout."},{"type":"Penthouse","area":"450 m2","floor":"38th","rooms":"5","parking":"2 cars","payment":"Bank","img":"deal-03.jpg","description":"Enjoy panoramic city views from this exclusive penthouse, featuring floor-to-ceiling windows and rooftop terrace."}];
+            const tabs       = Array.from(document.querySelectorAll('.deal-tab-btn'));
+            const infoEl     = document.getElementById('deal-info');
+            const imgEl      = document.getElementById('deal-image');
+            const descEl     = document.getElementById('deal-desc');
+            const imgBase    = '/assets/images/';  // nếu muốn dễ thay đổi folder sau này
+            
+            function renderDeal(idx) {
+              const d = dealsData[idx];
+            
+              // 1) active class toggle
+              tabs.forEach((btn, i) => {
+                btn.classList.toggle('bg-orange-500', i === idx);
+                btn.classList.toggle('bg-black',        i !== idx);
+              });
+            
+              // 2) render danh sách info
+              infoEl.innerHTML = `
+                <li class="flex justify-between"><span>Total Flat Space:</span><strong>${d.area}</strong></li>
+                <li class="flex justify-between"><span>Floor number:</span><strong>${d.floor}</strong></li>
+                <li class="flex justify-between"><span>Number of rooms:</span><strong>${d.rooms}</strong></li>
+                <li class="flex justify-between"><span>Parking Available:</span><strong>${d.parking}</strong></li>
+                <li class="flex justify-between"><span>Payment Process:</span><strong>${d.payment}</strong></li>
+              `;
+            
+              // 3) đổi ảnh & alt
+              imgEl.src = imgBase + d.img;
+              imgEl.alt = d.type;
+            
+              // 4) đổi phần mô tả
+              descEl.textContent = d.description;
+            }
+            
+            // 5) gắn sự kiện & render lần đầu
+            tabs.forEach((btn, i) => btn.addEventListener('click', () => renderDeal(i)));
+            renderDeal(0);
+          </script>
         </div>
       </div>
-    </div>
-    <!-- Contact Section Heading in index.pug-->
-    <div class="contact section py-20" style="background-image: url('/assets/images/contact-bg.jpg');min-height: 550px; background-size: cover; background-position: center; margin-bottom: 400px">
-      <div class="container mx-auto">
-        <div class="text-center max-w-xl mx-auto">
-          <h6 style="color: #ee626b; font-size: 15px; text-transform: uppercase; font-weight: 700">| Contact Us</h6>
-          <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">Get In Touch With Our Agents</h2>
+      <!-- Properties Grid-->
+      <div class="py-20 bg-gray-50">
+        <div class="container mx-auto">
+          <h6 class="text-3x1 font-bold" style="text-align: center; margin-bottom: 20px;color: #EE626B;">| Properties</h6>
+          <h2 class="text-2xl font-bold mb-8 justify-center flex">We Provide The Best Property You Like</h2>
         </div>
-        <div class="contact-content" style="width:1200px; height: 400px; ">
-          <div class="container mx-auto grid md:grid-cols-2 gap-8">
-            <div class="map">
-              <div class="w-full"></div>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth" width="100%" height="500" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
-              <div class="row flex justify-between space-x-4 mt-8">
-                <div class="col-lg-6 w-1/2" style="border-radius: 10px;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);padding: 35px 30px;background-color: #fff;">
-                  <div class="item phone flex"><img src="assets/images/phone-icon.png">
-                    <h6>010-020-0340<br><span>Phone Number</span></h6>
+        <div class="container mx-auto grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-01.jpg" alt="Luxury Villa">
+            <div class="flex items-center"><span style="background-color: #fbd9cf; color: #1e1e1e; padding: 5px 12px; border-radius: 5px; margin-top: 25px;">Luxury Villa</span>
+              <h6 class="font-bold mt-2" style="color:#f35525; padding-left:150px">$2,264,000</h6>
+            </div>
+            <h4 class="font-bold text-lg mt-1">18 New Street Miami, OR 97219</h4>
+            <ul class="space-x-4 text-1xl text-gray-600 mt-2 flex flex-wrap gap-x-8 gap-y-8">
+              <li>Bedrooms: <strong>8</strong></li>
+              <li>Bathrooms: <strong>8</strong></li>
+              <li>Area: <strong>545 m2</strong></li>
+              <li>Floor: <strong>3</strong></li>
+              <li>Parking: <strong>6 spots</strong></li>
+            </ul><a class="mt-4 bg-black text-white inline-flex items-center rounded-full width-full mx-auto" href="properties-details.html" style="width: 170px; padding: 10px; display: flex; justify-content: center; align-items: center;">Schedule a visit</a>
+          </div>
+          <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-02.jpg" alt="Luxury Villa">
+            <div class="flex items-center"><span style="background-color: #fbd9cf; color: #1e1e1e; padding: 5px 12px; border-radius: 5px; margin-top: 25px;">Luxury Villa</span>
+              <h6 class="font-bold mt-2" style="color:#f35525; padding-left:150px">$1,180,000</h6>
+            </div>
+            <h4 class="font-bold text-lg mt-1">54 Mid Street Florida, OR 27001</h4>
+            <ul class="space-x-4 text-1xl text-gray-600 mt-2 flex flex-wrap gap-x-8 gap-y-8">
+              <li>Bedrooms: <strong>6</strong></li>
+              <li>Bathrooms: <strong>5</strong></li>
+              <li>Area: <strong>450 m2</strong></li>
+              <li>Floor: <strong>3</strong></li>
+              <li>Parking: <strong>8 spots</strong></li>
+            </ul><a class="mt-4 bg-black text-white inline-flex items-center rounded-full width-full mx-auto" href="properties-details.html" style="width: 170px; padding: 10px; display: flex; justify-content: center; align-items: center;">Schedule a visit</a>
+          </div>
+          <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-03.jpg" alt="Luxury Villa">
+            <div class="flex items-center"><span style="background-color: #fbd9cf; color: #1e1e1e; padding: 5px 12px; border-radius: 5px; margin-top: 25px;">Luxury Villa</span>
+              <h6 class="font-bold mt-2" style="color:#f35525; padding-left:150px">$1,460,000</h6>
+            </div>
+            <h4 class="font-bold text-lg mt-1">26 Old Street Miami, OR 38540</h4>
+            <ul class="space-x-4 text-1xl text-gray-600 mt-2 flex flex-wrap gap-x-8 gap-y-8">
+              <li>Bedrooms: <strong>5</strong></li>
+              <li>Bathrooms: <strong>4</strong></li>
+              <li>Area: <strong>225 m2</strong></li>
+              <li>Floor: <strong>3</strong></li>
+              <li>Parking: <strong>10 spots</strong></li>
+            </ul><a class="mt-4 bg-black text-white inline-flex items-center rounded-full width-full mx-auto" href="properties-details.html" style="width: 170px; padding: 10px; display: flex; justify-content: center; align-items: center;">Schedule a visit</a>
+          </div>
+          <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-04.jpg" alt="Apartment">
+            <div class="flex items-center"><span style="background-color: #fbd9cf; color: #1e1e1e; padding: 5px 12px; border-radius: 5px; margin-top: 25px;">Apartment</span>
+              <h6 class="font-bold mt-2" style="color:#f35525; padding-left:150px">$584,500</h6>
+            </div>
+            <h4 class="font-bold text-lg mt-1">12 New Street Miami, OR 12650</h4>
+            <ul class="space-x-4 text-1xl text-gray-600 mt-2 flex flex-wrap gap-x-8 gap-y-8">
+              <li>Bedrooms: <strong>4</strong></li>
+              <li>Bathrooms: <strong>3</strong></li>
+              <li>Area: <strong>125 m2</strong></li>
+              <li>Floor: <strong>25th</strong></li>
+              <li>Parking: <strong>2 cars</strong></li>
+            </ul><a class="mt-4 bg-black text-white inline-flex items-center rounded-full width-full mx-auto" href="properties-details.html" style="width: 170px; padding: 10px; display: flex; justify-content: center; align-items: center;">Schedule a visit</a>
+          </div>
+          <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-05.jpg" alt="Penthouse">
+            <div class="flex items-center"><span style="background-color: #fbd9cf; color: #1e1e1e; padding: 5px 12px; border-radius: 5px; margin-top: 25px;">Penthouse</span>
+              <h6 class="font-bold mt-2" style="color:#f35525; padding-left:150px">$925,600</h6>
+            </div>
+            <h4 class="font-bold text-lg mt-1">34 Beach Street Miami, OR 42680</h4>
+            <ul class="space-x-4 text-1xl text-gray-600 mt-2 flex flex-wrap gap-x-8 gap-y-8">
+              <li>Bedrooms: <strong>4</strong></li>
+              <li>Bathrooms: <strong>4</strong></li>
+              <li>Area: <strong>180 m2</strong></li>
+              <li>Floor: <strong>38th</strong></li>
+              <li>Parking: <strong>2 cars</strong></li>
+            </ul><a class="mt-4 bg-black text-white inline-flex items-center rounded-full width-full mx-auto" href="properties-details.html" style="width: 170px; padding: 10px; display: flex; justify-content: center; align-items: center;">Schedule a visit</a>
+          </div>
+          <div class="bg-white p-4 rounded shadow"><img class="rounded mb-4" src="/assets/images/property-06.jpg" alt="Modern Condo">
+            <div class="flex items-center"><span style="background-color: #fbd9cf; color: #1e1e1e; padding: 5px 12px; border-radius: 5px; margin-top: 25px;">Modern Condo</span>
+              <h6 class="font-bold mt-2" style="color:#f35525; padding-left:150px">$450,000</h6>
+            </div>
+            <h4 class="font-bold text-lg mt-1">22 New Street Portland, OR 16540</h4>
+            <ul class="space-x-4 text-1xl text-gray-600 mt-2 flex flex-wrap gap-x-8 gap-y-8">
+              <li>Bedrooms: <strong>3</strong></li>
+              <li>Bathrooms: <strong>2</strong></li>
+              <li>Area: <strong>165 m2</strong></li>
+              <li>Floor: <strong>26th</strong></li>
+              <li>Parking: <strong>3 cars</strong></li>
+            </ul><a class="mt-4 bg-black text-white inline-flex items-center rounded-full width-full mx-auto" href="properties-details.html" style="width: 170px; padding: 10px; display: flex; justify-content: center; align-items: center;">Schedule a visit</a>
+          </div>
+        </div>
+      </div>
+      <!-- Contact Section Heading in index.pug-->
+      <div class="contact section py-20" style="background-image: url('/assets/images/contact-bg.jpg');min-height: 550px; background-size: cover; background-position: center; margin-bottom: 400px">
+        <div class="container mx-auto">
+          <div class="text-center max-w-xl mx-auto">
+            <h6 style="color: #ee626b; font-size: 15px; text-transform: uppercase; font-weight: 700">| Contact Us</h6>
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white">Get In Touch With Our Agents</h2>
+          </div>
+          <div class="contact-content" style="width:1200px; height: 400px; ">
+            <div class="container mx-auto grid md:grid-cols-2 gap-8">
+              <div class="map">
+                <div class="w-full"></div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth" width="100%" height="500" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
+                <div class="row flex justify-between space-x-4 mt-8">
+                  <div class="col-lg-6 w-1/2" style="border-radius: 10px;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);padding: 35px 30px;background-color: #fff;">
+                    <div class="item phone flex"><img src="assets/images/phone-icon.png">
+                      <h6>010-020-0340<br><span>Phone Number</span></h6>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 w-1/2" style="border-radius: 10px;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);padding: 35px 30px;background-color: #fff;">
+                    <div class="item email flex"><img src="assets/images/email-icon.png" style="max-width: 52px;box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                      <h6>info@villa.co<br><span>Business Email</span></h6>
+                    </div>
                   </div>
                 </div>
-                <div class="col-lg-6 w-1/2" style="border-radius: 10px;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);padding: 35px 30px;background-color: #fff;">
-                  <div class="item email flex"><img src="assets/images/email-icon.png" style="max-width: 52px;box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-                    <h6>info@villa.co<br><span>Business Email</span></h6>
-                  </div>
+              </div>
+              <form class="grid gap-4" style="margin-left: 30px; border-radius: 10px;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);padding: 35px 30px;background-color: #fff;">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700" for="name">Full Name</label>
+                  <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="name" type="text" name="name" placeholder="Your Name..." required>
                 </div>
-              </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700" for="email">Email Address</label>
+                  <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="email" type="email" name="email" placeholder="Your Email..." required>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700" for="subject">Subject</label>
+                  <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="subject" type="text" name="subject" placeholder="Subject...">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700" for="message">Message</label>
+                  <textarea class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="message" name="message" rows="4" placeholder="Your Message..."></textarea>
+                </div>
+                <div>
+                  <button class="text-white px-6 py-3 rounded hover:bg-orange-600 transition" type="submit" style="background-color:black; border-radius: 50px; width: 200px; height: 50px; font-size: 16px; font-weight: bold;">Send Message</button>
+                </div>
+              </form>
             </div>
-            <form class="grid gap-4" style="margin-left: 30px; border-radius: 10px;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);padding: 35px 30px;background-color: #fff;">
-              <div>
-                <label class="block text-sm font-medium text-gray-700" for="name">Full Name</label>
-                <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="name" type="text" name="name" placeholder="Your Name..." required>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700" for="email">Email Address</label>
-                <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="email" type="email" name="email" placeholder="Your Email..." required>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700" for="subject">Subject</label>
-                <input class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="subject" type="text" name="subject" placeholder="Subject...">
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700" for="message">Message</label>
-                <textarea class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" id="message" name="message" rows="4" placeholder="Your Message..."></textarea>
-              </div>
-              <div>
-                <button class="text-white px-6 py-3 rounded hover:bg-orange-600 transition" type="submit" style="background-color:black; border-radius: 50px; width: 200px; height: 50px; font-size: 16px; font-weight: bold;">Send Message</button>
-              </div>
-            </form>
           </div>
         </div>
       </div>
-    </div>
+    </main>
+    <!--– Footer-->
     <footer class="bg-gray-100 py-6">
       <div class="container mx-auto text-center text-sm text-gray-600">
         © 2048 Villa Agency Co., Ltd. All rights reserved.
         Design by<a class="text-orange-500 hover:underline" href="https://templatemo.com" target="_blank">TemplateMo</a>
       </div>
     </footer>
+    <!--– Scripts chung-->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script>
       window.addEventListener('load', function () {
-        const preloader = document.getElementById('js-preloader');
-        if (preloader) {
-          preloader.style.transition = 'opacity 0.5s ease';
-          preloader.style.opacity = '0';
-          setTimeout(function () {
-            preloader.style.display = 'none';
-          }, 500);
+        const p = document.getElementById('js-preloader');
+        if (p) {
+          p.style.transition = 'opacity 0.5s ease';
+          p.style.opacity = '0';
+          setTimeout(() => p.style.display = 'none', 500);
         }
       });
     </script>
     <script>
-      const swiper = new Swiper('.swiper', {
+      new Swiper('.swiper', {
         loop: true,
         autoplay: { delay: 5000 },
         pagination: { el: '.swiper-pagination', clickable: true },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
       });
     </script>
   </body>

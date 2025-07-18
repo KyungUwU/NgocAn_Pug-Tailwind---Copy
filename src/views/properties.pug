@@ -1,86 +1,50 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
-    title Properties - Villa Agency
+// File: src/views/properties.pug
 
-    //+ Fonts
-    link(
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    )
+extends layout.pug
 
-    //+ Stylesheets
-    link(rel="stylesheet", href="tailwind.css")
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css")
-    link(rel="stylesheet", href="https://unpkg.com/swiper@7/swiper-bundle.min.css")
+//– Tab title
+block title
+  | Properties – Villa Agency
 
-  body(class="font-['Poppins'] bg-white text-gray-800")
+//– Set active page for header
+block header_vars
+  - var activePage = 'Properties'
 
-    //+ Variables
-    include ../includes/variables.pug
+block content
+  //– load mixin for property cards
+  include /components/atoms/propertiesCard.pug
 
-    //+ Icon Mixin
-    include ../includes/icon.pug
+  //– Page Heading
+  .bg-gray-50.py-12
+    .container.mx-auto.text-center
+      span.text-sm.text-gray-500
+        a(href="/", class="hover:text-orange-500") Home
+        |  / Properties
+      h1.text-3xl.font-bold.mt-2 Properties
 
-    //+ Properties Card Mixin
-    include ../components/atoms/propertiesCard.pug
+  //– Filter Buttons
+  .container.mx-auto.py-6.flex.flex-wrap.gap-3.justify-center
+    each filter, i in bestDealTabs
+      button(
+        type="button",
+        class="filter-btn px-4 py-2 rounded border hover:bg-orange-500 hover:text-white transition",
+        data-filter=(i === 0 ? '*' : '.' + filter.toLowerCase().replace(' ', ''))
+      )= filter
 
-    //+ Preloader
-    include ../components/layouts/preloader.pug
+  //– Properties Grid
+  .bg-gray-50.py-12
+    .container.mx-auto
+      .grid(class="md:grid-cols-3 gap-8")
+        each prop in properties
+          +PropertiesCard(prop)
 
-    //+ Sub-header
-    include ../components/layouts/subheader.pug
-
-    //+ Header
-    -
-      const activePage = 'Properties';
-    include ../components/layouts/header.pug
-
-    //+ Page Heading
-    .bg-gray-50.py-12
-      .container.mx-auto.text-center
-        span.text-sm.text-gray-500
-          a(href="index.html", class="hover:text-orange-500") Home
-          |  / Properties
-        h1.text-3xl.font-bold.mt-2 Properties
-
-    //+ Filter Buttons
-    .container.mx-auto.py-6.flex.flex-wrap.gap-3.justify-center
-      each filter, i in bestDealTabs
-        button(
-          class="filter-btn px-4 py-2 rounded border hover:bg-orange-500 hover:text-white transition"
-          data-filter=(i === 0 ? '*' : '.' + filter.toLowerCase().replace(' ', ''))
-        ) #{filter}
-
-    //+ Properties Grid
-    .bg-gray-50.py-12
-      .container.mx-auto
-        .grid(class="md:grid-cols-3 gap-8")
-          each prop in properties
-            +PropertiesCard(prop)
-
-    //+ Pagination
-    .container.mx-auto.flex.justify-center.space-x-2.mt-8
-      each p, i in [1, 2, 3, '>>']
-        a(
-          href="#",
-          class=(i === 1 ? 'bg-orange-500 text-white' : 'bg-gray-200 text-gray-800 hover:bg-orange-500 hover:text-white') + ' px-3 py-1 rounded'
-        ) #{p}
-
-    //+ Footer
-    include ../components/layouts/footer.pug
-
-    //+ Preloader Script
-    script.
-      window.addEventListener('load', function () {
-        const preloader = document.getElementById('js-preloader');
-        if (preloader) {
-          preloader.style.transition = 'opacity 0.5s ease';
-          preloader.style.opacity = '0';
-          setTimeout(function () {
-            preloader.style.display = 'none';
-          }, 500);
-        }
-      });
+  //– Pagination
+  .container.mx-auto.flex.justify-center.space-x-2.mt-8
+    each p, i in [1, 2, 3, '>>']
+      a(
+        href="#",
+        class=(i === 1 
+          ? 'bg-orange-500 text-white' 
+          : 'bg-gray-200 text-gray-800 hover:bg-orange-500 hover:text-white'
+        ) + ' px-3 py-1 rounded'
+      )= p

@@ -1,112 +1,66 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
-    title Property Detail - Villa Agency
+// File: src/views/properties-details.pug
 
-    //+ Fonts
-    link(
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    )
+extends layout.pug
 
-    //+ Stylesheets
-    link(rel="stylesheet", href="tailwind.css")
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css")
-    link(rel="stylesheet", href="https://unpkg.com/swiper@7/swiper-bundle.min.css")
+//– Tab title
+block title
+  | Property Details – Villa Agency
 
-  body(class="font-['Poppins'] bg-white text-gray-800")
+//– Set active page for header
+block header_vars
+  - var activePage = 'Property Details'
 
-    //+ Properties Card Mixin
-    include ../components/atoms/propertiesCard.pug
+//– Page‑specific content
+block content
+  //– load mixins this view needs
+  include /components/atoms/propertiesCard.pug
+  include /components/atoms/accordion.pug
 
-    //+ Variables & Mixins
-    include ../includes/variables.pug
-    include ../includes/icon.pug
+  //– Page Heading
+  .bg-gray-50.py-12
+    .container.mx-auto.text-center
+      span.text-sm.text-gray-500
+        a(href="/", class="hover:text-orange-500") Home
+        |  / Single Property
+      h1.text-3xl.font-bold.mt-2 Single Property
 
-    //+ Preloader
-    include ../components/layouts/preloader.pug
+  //– Single Property Section
+  .container.mx-auto.grid(md:grid-cols-3 gap-8 py-12)
+    //– Main Content
+    div(class="md:col-span-2")
+      img.rounded.shadow.mb-6(src="/assets/images/single-property.jpg", alt="Property Image")
+      span.text-sm.text-orange-500 Apartment
+      h2.text-2xl.font-bold.mt-2.mb-4 24 New Street Miami, OR 24560
+      p.text-gray-700.mb-4
+        | Get
+        strong the best villa agency
+        |  HTML CSS Tailwind Template for your company website. TemplateMo provides you the
+        a(href="https://templatemo.com", target="_blank", class="text-orange-500 hover:underline") best free CSS templates
+        |  in the world. Please tell your friends about it.
+      p.text-gray-700
+        | When you look for free CSS templates, you can simply type TemplateMo in any search engine. Master cleanse +1 intelligentsia swag post‑ironic chambray.
 
-    //+ Sub-header
-    include ../components/layouts/subheader.pug
+      //– Accordion
+      +Accordion(accordionItems)
 
-    //+ Header
-    -
-      const activePage = 'Property Details';
-    include ../components/layouts/header.pug
-
-    //+ Page Heading
-    .bg-gray-50.py-12
-      .container.mx-auto.text-center
-        span.text-sm.text-gray-500
-          a(href="index.html", class="hover:text-orange-500") Home
-          |  / Single Property
-        h1.text-3xl.font-bold.mt-2 Single Property
-
-    //+ Single Property Section
-    .container.mx-auto.grid(class="md:grid-cols-3 gap-8 py-12")
-      //+ Main Content
-      div(class="md:col-span-2")
-        img(src="/assets/images/single-property.jpg", alt="Property Image", class="rounded shadow mb-6")
-        span.text-sm.text-orange-500 Apartment
-        h2.text-2xl.font-bold.mt-2.mb-4 24 New Street Miami, OR 24560
-        p.text-gray-700.mb-4
-          | Get 
-          strong the best villa agency
-          |  HTML CSS Tailwind Template for your company website. TemplateMo provides you the
-          a(href="https://templatemo.com", target="_blank", class="text-orange-500 hover:underline") best free CSS templates
-          |  in the world. Please tell your friends about it.
-        p.text-gray-700
-          | When you look for free CSS templates, you can simply type TemplateMo in any search engine. Master cleanse +1 intelligentsia swag post-ironic chambray.
-
-        //+ Accordion
-        include ../components/atoms/accordion.pug
-        +Accordion(accordionItems)
-
-      //+ Info Table
-      .space-y-4
+    //– Info Table
+    .space-y-4
+      each info in [
+        { icon: 'info-icon-01.png', label: '450 m2', desc: 'Total Flat Space' },
+        { icon: 'info-icon-02.png', label: 'Contract', desc: 'Contract Ready' },
+        { icon: 'info-icon-03.png', label: 'Payment', desc: 'Payment Process' },
+        { icon: 'info-icon-04.png', label: 'Safety', desc: '24/7 Under Control' }
+      ]
         .flex.items-center.space-x-4.p-4.bg-gray-50.rounded
-          img(src="/assets/images/info-icon-01.png", class="w-12")
+          img.w-12(src=`/assets/images/${info.icon}`, alt=info.desc)
           div
-            h4.font-semibold 450 m2
-            p.text-sm.text-gray-500 Total Flat Space
-        .flex.items-center.space-x-4.p-4.bg-gray-50.rounded
-          img(src="/assets/images/info-icon-02.png", class="w-12")
-          div
-            h4.font-semibold Contract
-            p.text-sm.text-gray-500 Contract Ready
-        .flex.items-center.space-x-4.p-4.bg-gray-50.rounded
-          img(src="/assets/images/info-icon-03.png", class="w-12")
-          div
-            h4.font-semibold Payment
-            p.text-sm.text-gray-500 Payment Process
-        .flex.items-center.space-x-4.p-4.bg-gray-50.rounded
-          img(src="/assets/images/info-icon-04.png", class="w-12")
-          div
-            h4.font-semibold Safety
-            p.text-sm.text-gray-500 24/7 Under Control
+            h4.font-semibold= info.label
+            p.text-sm.text-gray-500= info.desc
 
-    //+ Best Deal Section
-    .bg-orange-50.py-12
-      .container.mx-auto
-        h2.text-3xl.font-bold.mb-6 Find Your Best Deal Right Now!
-        .grid(class="md:grid-cols-2 gap-8")
-          each prop in properties
-            +PropertiesCard(prop)
-
-    //+ Footer
-    include ../components/layouts/footer.pug
-
-    //+ Preloader Script
-    script.
-      window.addEventListener('load', function () {
-        const preloader = document.getElementById('js-preloader');
-        if (preloader) {
-          preloader.style.transition = 'opacity 0.5s ease';
-          preloader.style.opacity = '0';
-          setTimeout(function () {
-            preloader.style.display = 'none';
-          }, 500);
-        }
-      });
+  //– Best Deal Section
+  .bg-orange-50.py-12
+    .container.mx-auto
+      h2.text-3xl.font-bold.mb-6 Find Your Best Deal Right Now!
+      .grid(md:grid-cols-2 gap-8)
+        each deal in bestDeals
+          +PropertiesCard(deal)

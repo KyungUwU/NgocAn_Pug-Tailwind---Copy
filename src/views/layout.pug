@@ -1,0 +1,70 @@
+// File: src/views/layout.pug
+
+//— chỉ include globals & icon mixin 1 lần duy nhất
+include /includes/variables.pug
+include /includes/icon.pug
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title
+      block title
+
+    //– Fonts
+    link(
+      rel="stylesheet",
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    )
+    //– Tailwind
+    link(rel="stylesheet" href="/tailwind.css")
+    //– Font Awesome
+    link(
+      rel="stylesheet",
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    )
+    //– Swiper
+    link(rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css")
+    //– Favicon
+    link(rel="icon" href="/favicon.ico" type="image/x-icon")
+
+  body(class="font-['Poppins'] bg-white text-gray-800")
+    //– Preloader
+    include /components/layouts/preloader.pug
+
+    //– Sub‑header
+    include /components/layouts/subheader.pug
+
+    //– cho phép page set activePage trước khi render header
+    block header_vars
+
+    //– Main header/nav
+    include /components/layouts/header.pug
+
+    //– Đây là chỗ các page đổ nội dung riêng của họ
+    main
+      block content
+
+    //– Footer
+    include /components/layouts/footer.pug
+
+    //– Scripts chung
+    script(src="https://cdn.jsdelivr.net/npm/alpinejs" defer)
+    script(src="https://unpkg.com/swiper@7/swiper-bundle.min.js")
+    script.
+      window.addEventListener('load', function () {
+        const p = document.getElementById('js-preloader');
+        if (p) {
+          p.style.transition = 'opacity 0.5s ease';
+          p.style.opacity = '0';
+          setTimeout(() => p.style.display = 'none', 500);
+        }
+      });
+    script.
+      new Swiper('.swiper', {
+        loop: true,
+        autoplay: { delay: 5000 },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      });

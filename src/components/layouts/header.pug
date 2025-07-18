@@ -1,15 +1,11 @@
 // src/components/layouts/header.pug
 
-//— pull in one, single navItems declaration
-include ../../../includes/variables.pug
-
 header.sticky.top-0.bg-white.shadow.z-50
   .container.mx-auto.px-4.py-4.flex.justify-between.items-center
     a(href="/").text-2xl.font-bold.text-black VILLA
 
     ul.flex.space-x-6.items-center
       each navItem in navItems
-        //— compute active status per iteration
         - var isActive = navItem.label === activePage
         li
           a(
@@ -19,7 +15,6 @@ header.sticky.top-0.bg-white.shadow.z-50
               : 'hover:text-orange-500'
           ) #{navItem.label}
 
-      //— static “Schedule a visit” button
       li
         a(
           href="#",
