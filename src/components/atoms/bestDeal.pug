@@ -15,12 +15,12 @@
     //- Deal Content
     div(class="grid md:grid-cols-3 gap-8")
       //- Deal Info
-      .space-y-2
-        p.text-gray-600 Total Flat Space: 185 m2
-        p.text-gray-600 Floor Number: 26th
-        p.text-gray-600 Rooms: 4
-        p.text-gray-600 Parking Available: Yes
-        p.text-gray-600 Payment Process: Bank
+      ul.space-y-2
+        li.text-gray-600 Total Flat Space: 185 m2
+        li.text-gray-600 Floor Number: 26th
+        li.text-gray-600 Rooms: 4
+        li.text-gray-600 Parking Available: Yes
+        li.text-gray-600 Payment Process: Bank
 
       //- Deal Image
       img(src="/assets/images/deal-01.jpg", alt="Best Deal", class="rounded shadow-md")
@@ -30,6 +30,6 @@
         p.text-gray-600
           | Discover this premium property with modern design, spacious rooms, and great amenities for comfortable living.
         a(
-          href="property-details.html",
-          class="inline-block bg-orange-500 text-white px-6 py-3 rounded mt-4 hover:bg-orange-600 transition"
-        ) Schedule a visit
+          href="#", class=" inline-flex items-center rounded-full bg-black text-white width-full", style="display: flex; align-items: center; width:220px;")
+          i.fa.fa-calendar.mr-1( style="background-color: #F35525 !important; color: white !important; display:flex; justify-content: center; align-items: center; width:40px; height:40px; border-radius: 50%;")
+          | Schedule a visit
