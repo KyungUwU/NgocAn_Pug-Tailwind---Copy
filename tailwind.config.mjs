@@ -34,6 +34,12 @@ export default {
         'xl': '1rem',
         '2xl': '1.5rem',
       },
+      gap: {
+        '4': '1rem',
+        '6': '1.5rem',
+        '8': '2rem',
+        '12': '3rem',
+      },
     },
   },
   plugins: [
