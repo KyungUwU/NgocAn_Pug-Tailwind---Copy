@@ -3,7 +3,7 @@
   .container.mx-auto
     h6.text-3x1.font-bold(class="",style="text-align: center; margin-bottom: 20px;color: #EE626B;")
       | | Properties
-    h2.text-3xl.font-bold.mb-8.justify-center We Provide The Best Property You Like
+    h2.text-2xl.font-bold.mb-8.justify-center.flex We Provide The Best Property You Like
   .container.mx-auto.grid(class="md:grid-cols-3 gap-8")
     each prop in properties
       .bg-white.p-4.rounded.shadow
@@ -17,7 +17,7 @@
           li Bathrooms: #{prop.baths}
           li Area: #{prop.area} m² 
           li Floor: #{prop.floor} 
-          li Parking: #{prop.parking ? 'Yes' : 'No'}
+          li Parking: #{prop.parking}
         a(
           href="properties-details.html",
           class="mt-4 bg-black text-white inline-flex items-center rounded-full width-full mx-auto"
